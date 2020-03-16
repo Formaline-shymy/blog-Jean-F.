@@ -1,7 +1,8 @@
 <?php
+
     class Users extends Controller {
         public function __construct(){
-            
+           $this->userModel = $this ->model('User');
         }
 
         public function register(){
@@ -26,25 +27,38 @@
                 'confirm_password_err' =>'',
          ];
                  
-            // Validation
+            // Validate name
                 if (empty($data['name'])){
                     $data['name_err'] = 'Veuillez renseigner votre prénom'; 
                 }
+
+                // Validate family Name
                 if (empty($data['familyname'])){
                     $data['familyname_err'] = 'Veuillez renseigner votre nom'; 
                 }
+
+                // Validate nick
                 if (empty($data['nick'])){
                     $data['nick_err'] = 'Veuillez renseigner votre identifiant'; 
+                } else{
+                    //Check nick
+                    if($this -> userModel -> findUserByNick($data['nick'])){
+                    $data['nick_err'] = 'Cet identifiant est déjà utilisé. Veuillez en saisir un autre'; 
+                    }
                 }
+                //Validate email
                 if (empty($data['email'])){
                     $data['email_err'] = 'Veuillez renseigner votre adresse mail'; 
                 }
+
+                // Validate password
                 if(empty($data['password'])){
                     $data['password_err'] = 'Veuillez renseigner votre mot de passe';
                   } elseif(strlen($data['password']) < 6){
                     $data['password_err'] = 'Le mot de pass doit contenir au moins 6 caracteres';
                   }
 
+                // Validate confirm password
                 if(empty($data['confirm_password'])){
                     $data['confirm_password_err'] = 'Veuillez confirmez votre mot de passe'; 
                 }  else {
@@ -55,7 +69,17 @@
                 //make sure errors are empty
                 if(empty($data['name_err']) && empty($data['familyname_err']) && empty($data['nick_err']) && empty($data['email_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
                 // Validated
-                die('SUper!');
+                // to hash password
+                    $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+
+                    // Register User
+                    if ($this->userModel->register($data)){
+                        // return redirect('/dashboard')->with('success', 'vous etes inscrit');   
+                    header('location:' .URLROOT . '/users/login');
+                    } else{
+                        die("Oups, il y a un problème");
+                    }
+
                 } else {
                 // Load view with errors
                 $this->view('users/register', $data);
@@ -102,11 +126,31 @@
                 if(empty($data['password'])){
                     $data['password_err'] = 'Veuillez renseigner votre mot de passe';
                   } 
+
+                //Check user's nick
+                if ($this ->userModel -> findUserByNick($data['nick'])){
+                    //User is found
+                }else{
+                    //User not found
+                    $data['nick_err'] = 'Identifiant invalide';
+                }
+
                 //make sure errors are empty
                 if(empty($data['nick_err']) && empty($data['password_err'])){
                  // Validated
-                 die('SUper ,MIAU!');
-                } else {
+                // Check and set logged in user
+                  $loggedInUser = $this ->userModel -> login($data['nick'], $data['password']);
+                   
+                  if ($loggedInUser){
+                      //create a session
+                      die ('success');
+                  }else{
+                    $data['password_err'] = 'Mot de passe invalide';
+                    
+                    $this -> view('users/login', $data);
+                  }
+                
+             } else {
                  // Load view with errors
                  $this->view('users/login', $data);
                         }     

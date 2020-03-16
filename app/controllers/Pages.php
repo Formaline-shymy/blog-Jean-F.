@@ -1,16 +1,20 @@
 <?php
   class Pages extends Controller {
-    
+    private $post;
+
     public function __construct(){
-      $this->postModel = $this->model('Post');
+      $this->pagesModel = $this->model('Page');
+     
     }
     
     public function index(){
-      $posts = $this->postModel->getPosts();
-      
+         
       $data = [
         'title' => 'Blog de Jean Forteroche',
-        'posts' => $posts
+
+        'description' =>'Eam prima minimum in. Mutat elitr intellegat vel no, vix adhuc impedit feugait ne. Ad eos alii debet quodsi, et harum placerat senserit vix. Et eum possim perpetua. Ius appareat conceptam contentiones te, vim in graeco discere, et minim argumentum quo.',
+        
+        'description2'=> 'Id has purto gubergren vulputate. Has an prima bonorum, enim salutandi mei ut. Nec ex eligendi adolescens, no nam sale graecis probatus, eros commodo adipisci eam ea. Aliquid explicari mei at, inimicus iracundia eu nec. Usu cu suas oblique fastidii, alia natum pri at. Ad per vidisse eripuit delicatissimi.'
       ];
      
       $this->view('pages/index', $data);
@@ -34,5 +38,13 @@
 
       $this->view('pages/biblio', $data);
     }
+  
+ 
+    public function mentions(){
+      $data = [
+        'title' => 'Mentions légales', 
+      ];
 
-  }
+      $this->view('pages/mentions', $data);
+    }
+}
