@@ -1,11 +1,19 @@
 @font-face {
+    font-family: 'RobotoHobbees';
+    font-style: normal;
+    font-weight: 400;
+    src: local('RobotoHobbees'), local('RobotoHobbees-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+
+@font-face {
     font-family: 'Kaushan Script';
     font-style: normal;
     font-weight: 400;
     src: local('Kaushan Script'), local('KaushanScript-Regular'), url(https://fonts.gstatic.com/s/kaushanscript/v8/vm8vdRfvXFLG3OLnsO15WYS5DG74wNI.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-    /* special-elite-regular - latin */
+
 @font-face {
     font-family: 'Special Elite';
     font-style: normal;
@@ -36,17 +44,18 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: white;
+    background-color:rgb(237, 241, 243);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 40px;
   }
   
   .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px 15px 32px;
     text-decoration: none;
-    font-size: 15px;
-    color:black;
+    font-size: 20px;
+    font-family: 'RobotoHobbees';
+    color:rgb(105, 95, 95);
     display: block;
     transition: 0.3s;
   }
@@ -66,7 +75,6 @@ body {
   #main {
     transition: margin-left .5s;
     padding: 16px;
-    margin-bottom: 60px;
   }
   
   @media screen and (max-height: 450px) {
@@ -94,13 +102,17 @@ body {
     text-align: center;
 }
   
-.episodeslink a {
-    color: black;
+.postlink a {
+    color: whitesmoke;
     text-decoration: none;
 }
 
-.episodeslink a:hover , .episodeslink a:focus {
-    color:whitesmoke;
+.postlink a:hover , .postlink a:focus {
+    color:black;
+}
+
+.error_page{
+    font-family: 'Special Elite';
 }
 
 #content {
