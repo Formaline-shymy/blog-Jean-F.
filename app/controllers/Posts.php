@@ -19,19 +19,32 @@
     }
 
 
-    public function post(){
-            
+    public function post($post_id = null) {
 
-        $data = [
-          'title' => 'Chapitre',
-            'content' => 'Miau',
-        ];
-  
-        $this->view('posts/post/post_id', $data);
-      
+     $posts = $this->postModel->getPosts();
+     $post = $this->postModel->getPostById($post_id);
+        
+     $data = [
+      'posts' => $posts,
+      'post' => $post,
+      'post_id' => $post_id,
+     ];
+
+     $this->view('posts/post', $data);
+   
+     if (is_null($post_id)) {
+      $this->view('posts/post', $data);
+     } else {
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+   
+       $data = [
+       'post_id' => $_POST['post_id'],
+       ];
+       $this->view('posts/post', $data);
+
+      }
+     
+       } 
       }
       
-    
-     
-
-  }
+}

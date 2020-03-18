@@ -1,6 +1,7 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
+<div class= "my-5">
 <section id="biographie" >
-  <div class="pt-5"> 
+  <div class="py-1"> 
       <div class="container">
         <div class="row justify-content-around"> 
           <div class="col-md-4">
@@ -14,7 +15,7 @@
                     <h2 class="sub-title color-gray text-center text-uppercase">Biographie</h2> <br>
                   </div>
                 </div>
-                  <p class="text-justify"><?php echo $data['description2']; ?></p>
+                  <p class="text-justify"><?php echo $data['description']; ?></p>
               </div>
               <div class= "postlink"><a href="<?php echo URLROOT; ?>/pages/about">Lire plus
               <i class="fab fa-readme"></i></a>
@@ -27,7 +28,7 @@
  </section>
 
 <section id="latest-book" >
-  <div class="pt-5"> 
+  <div class="py-5"> 
       <div class="container">
         <div class="row justify-content-around">
           <div class="col-md-6">
@@ -40,7 +41,7 @@
                   </div>
                 </div>
                 <h3 class="summary">Sommaire: </h3>
-                <p class="text-justify"><?php echo $data['description']; ?></p>
+                <p class="text-justify"><?php echo $data['sommaire']; ?></p>
               </div>
               <div class= "postlink"><a href="<?php echo URLROOT; ?>/posts/listposts">Lire les chapitres
               <i class="fab fa-readme"></i></a>
@@ -54,6 +55,6 @@
       </div>
   </div>
  </section>
-
+</div>
   <?php require APPROOT . '/views/inc/footer.php';?>
 

@@ -20,11 +20,10 @@
         require_once '../app/views/' . $view . '.php';
       } else {
         // View does not exist
-        $this->view('pages/404');
+        $this->view('pages/error404');
         // die('La page est introuvable');
       }
     }
-
 
 
     

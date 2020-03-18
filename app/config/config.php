@@ -5,7 +5,7 @@
   define('DB_PASS', '');
   define('DB_NAME', 'blogjf');
 
-  // App Root-  2 dirname go to app
+  // App Root-  dirname go to app
   define('APPROOT', dirname(dirname(__FILE__)));
   // URL Root
   define('URLROOT', 'http://localhost/blogjf');

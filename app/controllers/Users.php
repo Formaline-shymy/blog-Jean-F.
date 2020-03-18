@@ -143,7 +143,7 @@
                    
                   if ($loggedInUser){
                       //create a session
-                      die ('success');
+                      $this-> createUserSession($loggedInUser);
                   }else{
                     $data['password_err'] = 'Mot de passe invalide';
                     
@@ -162,8 +162,17 @@
                         'nick'=>'',
                         'password'=>'',
                     ];
+                    //Load view
                     $this->view('users/login', $data);
                 }
         }
 
+            public function createUserSession ($user)
+            {
+                $_SESSION['user_id'] = $user-> id;
+                $_SESSION['user_email'] = $user-> email;
+                $_SESSION['user_name'] = $user-> name;
+                header("Location: ../admins/index");
+                
+            }
     }

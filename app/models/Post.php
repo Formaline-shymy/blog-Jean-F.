@@ -1,7 +1,7 @@
 <?php
   class Post {
     private $db;
-  
+    
   
     public function __construct(){
       $this->db = new Database;
@@ -19,8 +19,13 @@
       $this->db->query('SELECT * FROM posts WHERE post_id = :post_id');
       $this->db->bind(':post_id', $post_id);
 
-      $row = $this->db->single();
-
+      if ($row = $this->db->single()){;
       return $row;
     }
+    else {
+      // ID does not exist
+       die("Désole mais aucun chapitre ne correspond à l'identifiant $post_id");    
+    }
+  }
+
   }

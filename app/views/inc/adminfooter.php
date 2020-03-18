@@ -1,19 +1,12 @@
- </div>
-     <div class="footer">
-        <p class="float-right"><a href="#">Retour en haut</a></p>
+<div class="footer">
+        <p class="float-right">
+            <button id="backtotop" title="Retour en haut">
+              <i class="fas fa-arrow-up"></i>
+            </button>
+        </p>
           <div class="container">
-           <div class="row justify-content-left"> 
-             <div class="col-md-5">
-                <a href="<?php echo URLROOT; ?>/pages/mentions">Mentions Légales</a>
-             </div>
-             <div class="col-md-5">
-                <?php require APPROOT . '/views/inc/pre-header.php'; ?>
-             </div>
-          </div>
-        </div>  
-        <hr class="simple">
-       <div class=oc>&copy; Blog de Jean Forteroche 2020 Aneta LAURENT - Projet 3 DWJ  OpenClassrooms</div>
-     </div>
+           <div class=oc>&copy; Blog de Jean Forteroche 2020 Aneta LAURENT - Projet 3 DWJ  OpenClassrooms</div>
+         </div>
      
   </div>  <!-- end of div container from header -->
 
@@ -23,4 +16,3 @@
     <script src="<?php echo URLROOT; ?>/js/main.js"></script>
   </body>
 </html>
-

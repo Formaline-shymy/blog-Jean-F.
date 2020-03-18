@@ -13,8 +13,8 @@
         'title' => 'Blog de Jean Forteroche',
 
         'description' =>'Eam prima minimum in. Mutat elitr intellegat vel no, vix adhuc impedit feugait ne. Ad eos alii debet quodsi, et harum placerat senserit vix. Et eum possim perpetua. Ius appareat conceptam contentiones te, vim in graeco discere, et minim argumentum quo.',
-        
-        'description2'=> 'Id has purto gubergren vulputate. Has an prima bonorum, enim salutandi mei ut. Nec ex eligendi adolescens, no nam sale graecis probatus, eros commodo adipisci eam ea. Aliquid explicari mei at, inimicus iracundia eu nec. Usu cu suas oblique fastidii, alia natum pri at. Ad per vidisse eripuit delicatissimi.'
+
+        'sommaire'=>'Augue persius per ea. Idque detraxit qui ei, pro nibh nullam consequuntur cu. Eu mundi laoreet duo, id delectus convenire intellegebat eum. Vocent timeam offendit qui ad, qualisque dissentias ea vim. Qui menandri tacimates gloriatur in, tale utroque vis ne, altera cetero recteque ad cum. Quo ne aliquid comprehensam, vel copiosae intellegat eu. Ei mel cibo consul suscipiantur, vim in debet suscipiantur.'
       ];
      
       $this->view('pages/index', $data);
@@ -23,8 +23,6 @@
     public function about(){
       $data = [
         'title' => 'Biographie',
-        'description1' => 'JEAN FORTEROCHE',
-        'description2' => 'De roman en roman, Jean Forteroche a noué un lien unique avec les lecteurs',
       ];
 
       $this->view('pages/about', $data);
@@ -32,8 +30,8 @@
 
     public function biblio(){
       $data = [
-        'title' => 'Bibliographie',
-        'description' => 'Bla bla bla bla',
+        'title' => "MES ROMANS",
+        'description'=>'h'
       ];
 
       $this->view('pages/biblio', $data);
@@ -47,4 +45,33 @@
 
       $this->view('pages/mentions', $data);
     }
+
+    public function newsletter(){
+      $data = [
+        'title' => 'NEWSLETTER', 
+        'description'=>'Dernières parutions, événements à venir, bonus, dédicaces... Recevez toutes mes actualités en vous inscrivant à la newsletter.',
+      ];
+
+      $this->view('pages/newsletter', $data);
+    }
+
+    public function error404(){
+      $data = [
+        'title' => '404', 
+        
+      ];
+
+      $this->view('pages/error404', $data);
+    }
+
+    public function profil(){
+      $data = [
+        'title' => 'PROFIL ADMIN', 
+        'description'=>'Welcom.',
+      ];
+
+      $this->view('pages/profil', $data);
+    }
+
+
 }
