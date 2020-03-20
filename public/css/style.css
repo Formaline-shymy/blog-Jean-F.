@@ -64,6 +64,12 @@ body {
     color: rgb(116, 145, 189);
 }  
 
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+  color: black;
+}
+
 .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -197,8 +203,7 @@ hr.stylepost:after {
 	position: relative;
 	top: -16px;
 	padding: 0 10px;
-	background:rgb(116, 145, 189); 
-	color: #534848;
+	background-color:#534848;
 	font-size: 26px;
 	-webkit-transform: rotate(50deg);
 	-moz-transform: rotate(30deg);
@@ -206,52 +211,78 @@ hr.stylepost:after {
 }    
 
 /* lllllllllllllllllllllllllllllllllllllllllllllllllllll */
-#navbar {
-    background-color: whitesmoke;
+.topnav {
+    overflow: hidden;
+    background-color: rgb(157, 173, 199); 
+  }
+  
+.topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 0px;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right:20px ;
+    font-family:RobotoHobbees ;
+}
+   
+.topnav a:not(.no-hover):hover {
+    background-color: rgb(186, 200, 223); 
+    color: whitesmoke; 
+}
+    
+.topnav-right {
+    float: right;
+}
+
+#navbar2 {
+    background-color:rgb(186, 200, 223); 
     position: fixed;
     float: left;
     min-width: 290px;
     height:100%;
     padding: 1px;
-    margin:0;
-}
-  
-header {
-    color: black;
-    font-size: 25px;
-    text-align: center;
-    margin: 5px;
-    font-family:RobotoHobbees;
+    margin-top :0px;
 }
 
-
-#navbar ul {
+#navbar2 thead {
     list-style: none;
     text-decoration:none;
-    height: 90%;
     padding-top: 10px;
     overflow-y: auto;
-    overflow-x: hidden;
-    
+    overflow-x: hidden;   
 }
      
 .nav-link {
     text-decoration: none;
     color: black;
     text-align: left;
-    padding-left: 15px;
-    line-height: 60px;
+    padding-left: 32px;
+    line-height: 70px;
     display: flex;
     flex-direction: column;
     flex-wrap:wrap;
     position: relative;
-    font-size: 23px;
+    font-size: 22px;
     font-family:RobotoHobbees ;
     width: 200px;
 }
+
+.nav-link:hover{
+    color:gainsboro
+}
    
-#navbar li {
+#navbar2 tr {
     position:relative;
+}
+
+#navbar2 tr:hover{
+    background-color:rgb(116, 145, 189);
+}
+
+nav tr{
+    background-color:rgb(186, 200, 223); 
 }
   
 #main-doc header {
@@ -261,27 +292,13 @@ header {
     font-weight:bold;     
 }
 
-code {
-    color:black;
-    background-color:grey;
-    display: block;
-    height: auto;
-    width:350px;
-    border: 1.2px solid;
-    border-radius: 5px;
-    line-height: 2;
-    font-style: italic;
-    text-align:justify;
-    padding-left: 5px;
-    padding-right:5px;
-    margin: 25px auto 25px;           
-}
-.main-section {
+#main-doc {
     color: black;
     font-size: 15px;
     padding: 2px;
     text-align:justify;
     margin-left: 300px;
+    margin-top: 25px;
 }
 
 
