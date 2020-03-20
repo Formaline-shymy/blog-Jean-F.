@@ -23,8 +23,5 @@
         $this->view('pages/error404');
         // die('La page est introuvable');
       }
-    }
-
-
-    
+    }  
   }
