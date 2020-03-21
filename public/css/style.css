@@ -114,12 +114,14 @@ a.disabled {
     text-align: center;
 }
   
-.postlink a {
+.postlink a,
+.postshort a {
     color: whitesmoke;
     text-decoration: none;
 }
 
-.postlink a:hover , .postlink a:focus {
+.postlink a:hover , .postlink a:focus,
+.postshort a:hover , .postshort a:focus {
     color:black;
 }
 
