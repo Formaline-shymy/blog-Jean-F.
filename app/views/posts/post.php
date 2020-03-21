@@ -6,21 +6,22 @@
                <a href="<?php echo URLROOT; ?>/posts/listposts">Retour à la liste des chapitres</a>
             </p>
 
-            <!-- <?php foreach($data['posts'] as $post) : ?> <?php endforeach; ?> -->
-                <p class="titlePost text-center"> 
-                    <?php echo $post->post_title; ?>
+
+                <p class="titlePost  text-center  "> 
+                      <?php echo $data['post']->post_title; ?>
                 </p>
-                <hr class="stylepost">
+                <hr class="stylepost mt-5">
                  <br>
-                <p class="contentPost text-justify">
-                    <?php echo $post->post_content; ?>
+                <p class="contentPost text-justify ">
+                       <?php echo $data['post']->post_content; ?>
                 </p>         
              
                 <hr>
-                <p class="titleComments">Laissez un commentaire à <?php echo $post->post_title; ?></p>
-
+                <p class="titleComments">Laissez un commentaire à <?php echo $data['post']->post_title; ?>  
+                
                 <div class='form mb-5'>
-                  <form>
+         
+                  <form action="<?php echo URLROOT; ?>/posts/post/<?php echo $data['post']->post_id; ?>" method="post">
                     <div class="form-group">
                         <input type="text" class="form-control" id="author" name="author" placeholder="Votre identifiant" 
                                required />
@@ -28,12 +29,11 @@
                     <div class="form-group">
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"placeholder="Votre commentaire" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-secondary">Envoyer</button>
+                    <button type="submit" class="btn btn-secondary">Publier</button>
                   </form>
                 </div>
-        
-      
-      
+
+
         <div class="share-chapter">
         <div class="container">
             <div class="d-flex align-items-center ">

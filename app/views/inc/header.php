@@ -15,7 +15,7 @@
   <title><?php echo SITENAME;?></title>
   <meta name="description" content="Blog Jean Forteroche: Nouveau romans en ligne" />
   <link rel="icon" type="image/png" href="public/img/icona.png" sizes="32x32" />
-
+  
  </head>
 <body>
   <?php require APPROOT .'/views/inc/navbar.php';?>

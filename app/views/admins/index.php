@@ -1,10 +1,12 @@
   <?php require APPROOT . '/views/inc/adminheader.php'; ?>
     <nav class="topnav">
       <div class="topnav-right">
-          <?php if (isset ($_SESSION['user_id'])) :?>
-            <a class = "link" href="<?php echo URLROOT; ?>/pages/index">Se déconnecter</a>
-          <?php endif;?>
-          <a class = "link" href="<?php echo URLROOT; ?>/index.php">Changer le mot de passe</a>
+            
+            <a class="nav-link" href="<?php echo URLROOT; ?>/users/logout">Se déconnecter</a>
+            <!-- <a class="nav-link" href="#">Changer le mot de passe</a> -->
+     
+       
+         
       </div>
     </nav>
 
@@ -12,24 +14,40 @@
       <table class="table">
           <tbody>
             <tr>
-              <td><a class="nav-link" href="#Tableau de bord">Tableau de bord</a></td>
+              <td><a class="nav-link" href="#Tab">Tableau de bord</a></td>
             </tr>
             <tr>
-              <td><a class="nav-link" href="#Administration des posts">Administration</a></td>
+              <td><a class="nav-link" href="#Adm">Administration</a></td>
             </tr>
             <tr>
-              <td><a class="nav-link" href="#Moderation des commentaires">Moderation</a></td>
+              <td><a class="nav-link" href="#Moder">Moderation</a></td>
             </tr>
             <tr>
-              <td><a class="nav-link" href="#Autres chose">Autres chose</a></td>
+              <td><a class="nav-link" href="<?php echo URLROOT; ?>">Retour au site</a></td>
             </tr>
           </tbody>    
       </table>
     </nav>
 
     <main id="main-doc">
-      <div class ="container id=table ">
+      <div class ="container">
         <header>Profil d'administrateur </header>
-        <p> Bienvenue</p>
+        <section  id="Tab">
+        <h2>Tableau de bord</h2> 
+          <div class = 'hi'>Bonjour  <?php echo $_SESSION['name']; ?> !</div>
+        </section>
+        <section id='Adm'>
+          <h2>Administration des posts</h2>    
+              <form method="post">
+                <textarea id="mytextarea">CHAPITRE</textarea>
+              </form>
+        </section>
+        <section id='Moder'>
+          <h2>Moderation des commentaires</h2>    
+             
+        </section>
+
+
+    
       </div>
     </main>

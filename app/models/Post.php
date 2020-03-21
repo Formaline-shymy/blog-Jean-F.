@@ -10,7 +10,9 @@
     public function getPosts(){
       $this->db->query("SELECT * FROM posts");
 
-      return $this->db->resultSet();
+      $results = $this->db->resultSet();
+
+     return $results;
     }
 
 
@@ -24,7 +26,8 @@
     }
     else {
       // ID does not exist
-       die("Désole mais aucun chapitre ne correspond à l'identifiant $post_id");    
+       die ("Désole mais aucun chapitre de 'Billet simple pour l'Alaska' ne correspond à l'identifiant $post_id") ;    
+       
     }
   }
 

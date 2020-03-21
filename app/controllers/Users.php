@@ -75,7 +75,7 @@
                     // Register User
                     if ($this->userModel->register($data)){
                         // return redirect('/dashboard')->with('success', 'vous etes inscrit');   
-                    header('location:' .URLROOT . '/users/login');
+                    redirect('users/login');
                     } else{
                         die("Oups, il y a un problème");
                     }
@@ -167,20 +167,28 @@
                 }
         }
 
-            public function createUserSession ($user)
-            {
-                $_SESSION['user_id'] = $user-> id;
-                $_SESSION['user_email'] = $user-> email;
-                $_SESSION['user_name'] = $user-> name;
-                header("Location: ../admins/index");
-                
+        public function createUserSession($user){
+                $_SESSION['id'] = $user->id;
+                $_SESSION['email'] = $user->email;
+                $_SESSION['name'] = $user->name;   
+                // header('location:' .URLROOT . '/admins/index');
+                redirect('admins/index');
             }
-
+            
             public function logout(){
-                unset($_SESSION['user_id']);
-                unset($_SESSION['user_email']);
-                unset($_SESSION['user_name']);
+                unset($_SESSION['id']);
+                unset($_SESSION['email']);
+                unset($_SESSION['name']);
                 session_destroy();
-                header("Location: ../users/login");
+                redirect('users/login');
             }
-    }
+         
+            public function isLoggedIn(){
+                if(isset($_SESSION['id'])){
+                  return true;
+                } else {
+                  return false;
+                }
+
+            }
+ }
