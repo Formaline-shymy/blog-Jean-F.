@@ -170,9 +170,9 @@
         public function createUserSession($user){
                 $_SESSION['id'] = $user->id;
                 $_SESSION['email'] = $user->email;
-                $_SESSION['name'] = $user->name;   
-                // header('location:' .URLROOT . '/admins/index');
-                redirect('admins/index');
+                $_SESSION['name'] = $user->name;  
+                // header('location:' .URLROOT . '/admin/index');
+                redirect('admin/index');
             }
             
             public function logout(){
@@ -183,12 +183,5 @@
                 redirect('users/login');
             }
          
-            public function isLoggedIn(){
-                if(isset($_SESSION['id'])){
-                  return true;
-                } else {
-                  return false;
-                }
-
-            }
+           
  }

@@ -12,7 +12,7 @@
     }
 
     public function index(){
-     
+     // get posts
       $posts = $this->postModel->getPosts();
 
       $data = [

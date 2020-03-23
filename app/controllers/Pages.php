@@ -56,22 +56,9 @@
     }
 
     public function error404(){
-      $data = [
-        'title' => '404', 
-        
-      ];
+     $data = [];
 
       $this->view('pages/error404', $data);
     }
-
-    public function profil(){
-      $data = [
-        'title' => 'PROFIL ADMIN', 
-        'description'=>'Welcom.',
-      ];
-
-      $this->view('pages/profil', $data);
-    }
-
 
 }

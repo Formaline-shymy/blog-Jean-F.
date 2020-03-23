@@ -40,6 +40,18 @@
             return false;
         }
     }
+    
+    public function countComments() {
+      $this->db->query('SELECT * FROM comments');
+    
+      $this->db->resultSet();
+    
+      $results = $this->db->rowCount();
+    
+      return $results;
+     }
+
+  
 }
 
   
