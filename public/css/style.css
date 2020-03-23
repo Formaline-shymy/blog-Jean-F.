@@ -159,6 +159,7 @@ a.disabled {
 
 .oc {
     text-align: center;
+    color:black;
 }
 
 .footer a , .linkback a {
@@ -238,37 +239,43 @@ hr.stylepost:after {
     float: right;
 }
 
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+}
+
 #navbar2 {
     background-color:rgb(186, 200, 223); 
     position: fixed;
     float: left;
     min-width: 290px;
     height:100%;
-    padding: 1px;
-    margin-top :0px;
+    padding: 0px;
+    margin-top :-20px;
 }
 
 #navbar2 thead {
     list-style: none;
     text-decoration:none;
-    padding-top: 10px;
+    padding-top: 40px;
     overflow-y: auto;
-    overflow-x: hidden;   
+    overflow-x: hidden;  
+
 }
      
 .nav-link {
     text-decoration: none;
     color: black;
     text-align: left;
-    padding-left: 32px;
-    line-height: 70px;
+    padding-left: 10px;
+    line-height: 59px;
     display: flex;
     flex-direction: column;
     flex-wrap:wrap;
     position: relative;
     font-size: 22px;
     font-family:RobotoHobbees ;
-    width: 200px;
+    width: 280px;
 }
 
 .nav-link:hover{
@@ -285,6 +292,7 @@ hr.stylepost:after {
 
 nav tr{
     background-color:rgb(186, 200, 223); 
+    margin-top: 0;
 }
   
 #main-doc header {
@@ -297,10 +305,10 @@ nav tr{
 #main-doc {
     color: black;
     font-size: 15px;
-    padding: 2px;
+    padding: 20px;
     text-align:justify;
     margin-left: 300px;
-    margin-top: 25px;
+    margin-top: 80px;
 }
 
 
