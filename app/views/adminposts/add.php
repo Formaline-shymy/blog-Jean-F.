@@ -1,22 +1,30 @@
  <?php require APPROOT . '/views/inc/adminheader.php'; ?>
-    <main id="main-doc">   
-        <h2 class="text-uppercase text-white mt-0"><i class="fas fa-file-import"></i> Ecrire un nouveau chapitre</h2> 
-             <form action="<?php echo URLROOT; ?>/adminposts/add" method="post" enctype="multipart/form-data">
+    <main id="main-doc">  
+
+        <h2 class="text-uppercase text-center text-white mt-0 mb-3"><i class="fas fa-keyboard"></i> Ecrire un nouveau chapitre</h2> 
+         <form action="<?php echo URLROOT; ?>/adminPosts/add" method="post" enctype="multipart/form-data">
                 <div class="card card-body bg-light mt-2">
                   <div class="row mx-auto mb-2">
                       <div class="form-group mr-5">
                         <label for="title">Titre: <sup>*</sup></label>
-                        <input id="title" type="text" name="title" class="form-control form-control-lg" required>
+                        <input type="text" name="title" class="form-control form-control-lg <?php echo (!empty($data['title_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['title']; ?>">
+                        <span class="invalid-feedback"><?php echo $data['title_err']; ?></span>
                       </div>
-                     <div class="form-group ml-5"> 
-                      <label for="date">Date: <sup>*</sup></label>
-                      <input name="date" type="date" name="date" class="form-control form-control-lg" placeholder="Entrez la date"required>
+                      <div class="form-group mr-5">
+                        <label for="date">Date: <sup>*</sup></label>
+                        <input type="date" name="date" class="form-control form-control-lg <?php echo (!empty($data['date'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['date']; ?>">
+                        <span class="invalid-feedback"><?php echo $data['date']; ?></span>
+                      </div>
+                      <br><br>
                      </div>     
-                  </div>   
-                  <br><br>
-                  <textarea id="mytextarea">  </textarea>
+                     <div class="form-group">
+                    <label for="body">Contenu: <sup>*</sup></label>
+                    <textarea id="mytextarea" name="content" form-control form-control-lg <?php echo (!empty($data['content_err'])) ? 'is-invalid' : ''; ?>"><?php echo $data['content']; ?></textarea>
+                    <span class="invalid-feedback">
+                      <?php echo $data['content_err']; ?></span>
+                  </div>              
                   <input type="submit" class="btn btn-info btn-block mt-3" value="Publier">
-                </div>    
+                </div> </div>   
             </form>   
     </main>
 
