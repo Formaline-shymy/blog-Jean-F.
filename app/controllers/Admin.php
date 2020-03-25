@@ -8,20 +8,19 @@
         redirect('index');
           // block access to admin profile for not register users
       }
-      $this->adminModel = $this->model('AdminPost');
+      $this->postModel = $this->model('Post');
       $this->commentModel = $this->model('Comment');
    }  
   
       public function index(){
-        $postsCount = $this->adminModel->countPosts();
+        $postsCount = $this->postModel->countPosts();
         $commentsCount = $this->commentModel->countComments();
        
 
         $data = [
           'postsCount'=>$postsCount,
           'commentsCount'=>$commentsCount,
-
-          
+          // 'title'     =>'a kuku'   
         ];
   
         $this->view('admin/index', $data);

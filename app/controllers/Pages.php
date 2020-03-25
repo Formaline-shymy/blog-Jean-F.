@@ -47,10 +47,7 @@
     }
 
     public function newsletter(){
-      $data = [
-        'title' => 'NEWSLETTER', 
-        'description'=>'Dernières parutions, événements à venir, bonus, dédicaces... Recevez toutes mes actualités en vous inscrivant à la newsletter.',
-      ];
+      $data = [ ];
 
       $this->view('pages/newsletter', $data);
     }

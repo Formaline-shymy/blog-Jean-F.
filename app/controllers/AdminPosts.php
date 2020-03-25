@@ -1,45 +1,96 @@
 <?php
 class AdminPosts extends Controller {
-    private $postModel;
-
-    public function __construct(){
+      public function __construct(){
         if (!isset($_SESSION['id'])) {
             redirect('index');
             // block access to admin profile for not register users
         }
-    $this->postModel = $this->model('AdminPost');
+    $this->postModel = $this->model('Post');
     }
- 
-    public function index(){
-        $posts = $this->AdminPostModel->getPosts();
-       
+      public function index() {
+          $posts = $this->postModel->getPosts();
 
+          $data = [
+          'posts' => $posts,
+          ];
+
+          $this->view('adminposts/index', $data);
+      }
+    
+      public function add(){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+          // Sanitize POST array
+          $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+       
         $data = [
-          'posts'=>$posts,
+        //  'description' =>'miauuuuuuuu',
+          'title' => $_POST['title'],
+          'date' => $_POST['date'],
+          'content' =>$_POST['content'],
+
+          'title_err' => '',
+          'date_err' => '',
+          'content_err'=> '',
+        ];
+        
+        // Validate data
+        if(empty($data['title'])){
+          $data['title_err'] = 'Veuillez remplir ce champ';
+        }
+        if(empty($data['date'])){
+          $data['date_err'] = 'Veuillez choisir une date';
+        }
+        if(empty($data['content'])){
+          $data['content_err'] = 'Veuillez écrir un chapitre';
+        }
+        // Make sure there is no errors
+        if(empty($data['title_err']) && empty($data['date_err']) && empty($data['content_err'])){
+          // Validated
+          if($this->postModel->addPost($data)){
+             redirect('adminposts/index');
+          } else {
+            die('Oups, alors!');
+          }
+        } else {
+          // Load view with errors
+          $this->view('adminposts/add', $data);
+        }
+    
+      } else {
+        $data = [
+          'title' => '',
+          'date' => '',
+          'content'=>'',
         ];
   
-        $this->view('admin/index', $data);
-      }
+        $this->view('adminposts/add', $data);
+      }       
+     }
 
-      public function add(){
-      
-           $data = [
-         'title' => $_POST['post_title'],
-         'date' => $_POST['post_date'],
-         'content' => $_POST['post_content'],
+     public function show($id)
+     {
+      $chapter = $this->chapterModel->getChapterById($id);
     
-        ];
-     $this->view('adminposts/add', $data);
-             
-         if ($this->AdminPostModel->addPost($data)) {
-          die('Chapitre a été ajouté');
-          redirect('AdminPosts');
-         } else {
-          die('Oups, il y a eu une erreur');
-         }
-        }
+      $data = [
+       'chapter' => $chapter,
+      ];
+    
+      $this->view('adminchapters/show', $data);
+     }
+    
+
+      
+      public function edit(){
+      $data = [];
+      $this->view('adminposts/edit', $data);
       }
 
+      public function delate(){
+      $data = [];
+      $this->view('adminposts/edit', $data);
+      }
+      
+}
 
 
 
