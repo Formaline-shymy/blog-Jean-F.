@@ -24,13 +24,7 @@
         unset($_SESSION[$name. '_class']);
       }
     }
-
-    function isLoggedIn(){
-      if(isset($_SESSION['id'])){
-        return true;
-      } else {
-        return false;
-      }
-   }
   }
+   
+  
 
