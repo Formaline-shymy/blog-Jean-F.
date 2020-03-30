@@ -21,9 +21,6 @@
             <div class="col">
               <input type="submit" value="Se connecter" class="btn btn-info btn-block">
             </div>
-            <div class="col">
-              <a href="<?php echo URLROOT; ?>/users/register" class="btn btn-light btn-block">Vous n'avez pas un compte? Inscrivez-vous</a>
-            </div>
           </div>
         </form>
       </div>

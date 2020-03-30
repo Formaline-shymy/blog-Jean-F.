@@ -7,12 +7,12 @@
                 <a href="<?php echo URLROOT; ?>/pages/mentions">Mentions Légales</a>
              </div>
              <div class="col-md-5">
-                <?php require APPROOT . '/views/inc/pre-header.php'; ?>
+                <?php require APPROOT . '/views/inc/pre-footer.php'; ?>
              </div>
           </div>
         </div>  
         <hr class="simple">
-       <div class=oc>&copy; Blog de Jean Forteroche 2020 Aneta LAURENT - Projet 3 DWJ  OpenClassrooms</div>
+       <div class="oc">&copy; Blog de Jean Forteroche 2020 Aneta LAURENT - Projet 3 DWJ  OpenClassrooms</div>
      </div>
      
   </div>  <!-- end of div container from header -->

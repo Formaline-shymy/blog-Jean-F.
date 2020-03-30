@@ -43,7 +43,7 @@
                 <h3 class="summary">Sommaire: </h3>
                 <p class="text-justify"><?php echo $data['sommaire']; ?></p>
               </div>
-              <div class= "postlink"><a href="<?php echo URLROOT; ?>/posts/listposts">Lire les chapitres
+              <div class= "postlink"><a href="<?php echo URLROOT; ?>/posts/index">Lire les chapitres
               <i class="fab fa-readme"></i></a>
               </div>
             </div>

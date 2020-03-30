@@ -3,51 +3,49 @@
     <div class="container">
         <div class="p-3">
             <p class="linkback">
-               <a href="<?php echo URLROOT; ?>/posts/listposts">Retour à la liste des chapitres</a>
+               <a href="<?php echo URLROOT; ?>/posts/index">Retour à la liste des chapitres</a>
             </p>
-
-
                 <p class="titlePost  text-center  "> 
-                      <?php echo $data['post']->post_title; ?>
+                      <?php echo $data['post']->title; ?>
                 </p>
                 <hr class="stylepost mt-5">
                  <br>
                 <p class="contentPost text-justify ">
-                       <?php echo $data['post']->post_content; ?>
+
+                       <?php echo $data['post']->content; ?>
                 </p>         
              
                 <hr>
-                <p class="titleComments">Laissez un commentaire à <?php echo $data['post']->post_title; ?>  
-                
+                <p class="titleComments">Laissez un commentaire</p> 
+                               
+           
+           <?php foreach ($data['commentsByPostId'] as $commentByPostId): ?>
+              <div class="comment">
+                <div class ="row">
+                  <div class="col-8 d-flex align-items-left">
+                    <p class="text-uppercase">
+                      <?php echo $commentByPostId->author; ?> </p>&nbsp;&nbsp;écrit: 
+                      <?php echo $commentByPostId->content;?> 
+                    </div>
+                    <div class="col-4 text-right">
+                    <i class="fas fa-exclamation"></i>
+                  </div>
+                </div>
+              </div>
+           <?php endforeach;?>
+                 
                 <div class='form mb-5'>
          
-                  <form action="<?php echo URLROOT; ?>/posts/post/<?php echo $data['post']->post_id; ?>" method="post">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="author" name="author" placeholder="Votre identifiant" 
-                               required />
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"placeholder="Votre commentaire" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-secondary">Publier</button>
-                  </form>
-                </div>
-
-
-        <div class="share-chapter">
-        <div class="container">
-            <div class="d-flex align-items-center ">
-                <p class="ml-auto mr-3">Partagez sur:</p>
-                <ul class="d-flex social-icons list-unstyled">
-                    <li><a href="#"><i class="fab fa-facebook-f" style="color:black"></i></a></li>&nbsp;&nbsp;
-                    <li><a href="#"><i class="fab fa-twitter" style="color:black"></i></a></li>&nbsp;&nbsp;
-                    <li><a href="#"><i class="fab fa-tumblr" style="color:black"></i></li></a>&nbsp;&nbsp;
-                    <li><a href="#"><i class="fab fa-pinterest" style="color:black"></i></a></li>
-                </ul>
-            </div>
-        </div>
-        </div>
-      </div>   
-    </div>  
-
-<?php require APPROOT . '/views/inc/footer.php'; ?>   
+                <form action="<?php echo URLROOT; ?>/posts/post/<?php echo $data['post']->post_id; ?>" method="post">
+              <div class="form-group">
+                <label for="author">Identificant:</label>
+                <input id="author" name="author" type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="content">Commentaire:</label>
+                <textarea id="content" name="content" class="form-control" rows="3" required></textarea>
+              </div>
+              <input type="hidden" name="post_id" value="<?php echo $data['post']->post_id; ?>">
+              <input type="submit" class="btn btn-dark mt-4" value="Publier">
+            </form>
+           </div>

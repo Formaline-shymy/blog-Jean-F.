@@ -1,7 +1,7 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
   <div class="row">
     <div class="col-md-5 mx-auto">
-      <div class="card card-body bg-light mt-5">
+      <div class="card card-body bg-light mt-3 mb-5">
       <h3>Inscription</h3> 
         <p>Pour vous inscrire, merci de remplir tous les champs obligatoires:</p>
         <form action="<?php echo URLROOT; ?>/users/register" method="post">
@@ -39,9 +39,6 @@
           <div class="row">
             <div class="col">
               <input type="submit" value="S'inscrire" class="btn btn-info btn-block">
-            </div>
-            <div class="col">
-              <a href="<?php echo URLROOT; ?>/users/login" class="btn btn-light btn-block">Vous avez déjà un compte? Connectez-vous</a>
             </div>
           </div>
         </form>
