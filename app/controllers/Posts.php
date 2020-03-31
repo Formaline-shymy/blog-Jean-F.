@@ -31,7 +31,8 @@
      $comments = $this->commentModel->getComments();
      
      $commentsByPostId = $this->commentModel->getCommentsbyPostId($post_id);
- 
+    
+  
           
      $data = [
       'posts' => $posts,
@@ -39,6 +40,7 @@
       'post_id' => $post_id,
       'comments' => $comments,
       'commentsByPostId' => $commentsByPostId,
+    
      ];
 
      $this->view('posts/post', $data);
@@ -51,6 +53,7 @@
           'author' => $_POST['author'],
           'content' => $_POST['content'],
           'post_id' => $_POST['post_id'],
+         
         ];
 
         if(!empty($data['author']) && !empty($data['content']) ){
@@ -65,7 +68,7 @@
             'author' => '',
             'post_id' => '',
             'content'=>'',
-          ];
+             ];
     
           $this->view('posts/index', $data);
        }       

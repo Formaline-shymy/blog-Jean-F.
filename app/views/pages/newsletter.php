@@ -6,7 +6,8 @@
      <div class="card card-body bg-light mt-5">
       <h3 class="newsletter text-center">NEWSLETTER</h3> 
       <p class="newsletterdescription text-center">Dernières parutions, événements à venir, bonus, dédicaces... Recevez toutes mes actualités en vous inscrivant à la newsletter:</p>
-          
+    
+
         
         <form method="post">
             <div class="form-group">

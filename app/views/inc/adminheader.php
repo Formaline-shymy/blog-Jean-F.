@@ -94,17 +94,17 @@
         <table class="table">
             <tbody>
               <tr>
-                <td><a class="nav-link" href="<?php echo URLROOT; ?>/admin/index">Profil admin</a></td>
+                <td><a class="nav-link" href="<?php echo URLROOT; ?>/admin/index">Tableau de bord</a></td>
               </tr>
               <tr>
-                <td><a class="nav-link" href="<?php echo URLROOT; ?>/adminposts/index">Tableau de bord</a></td>
+                <td><a class="nav-link" href="<?php echo URLROOT; ?>/adminposts/index">Liste de chapitres</a></td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td><a class="nav-link" href="<?php echo URLROOT; ?>/adminposts/add">Ajouter un chapitre</a></td>
-              </tr>
+              </tr> -->
               </tr>         
               <tr>
-                <td><a class="nav-link" href="<?php echo URLROOT; ?>/admincomments/index">Modérer des commentaires</a></td>
+                <td><a class="nav-link" href="<?php echo URLROOT; ?>/admincomments/index">Liste des commentaires</a></td>
               </tr>
               <tr>
                 <td><a class="nav-link" href="<?php echo URLROOT; ?>/users/register" > Inscrir un nouveau utilisateur</a>

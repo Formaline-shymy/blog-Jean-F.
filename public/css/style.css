@@ -191,7 +191,7 @@ hr{
     border-top: 2px solid #534848;
 }
 
-hr.stylepost { 
+hr.stylepost1 { 
     border: 0; text-align: center;
     height: 3px; 
     background-image: -webkit-linear-gradient(left, #f0f0f0, #534848, #f0f0f0);
@@ -200,7 +200,7 @@ hr.stylepost {
     background-image: -o-linear-gradient(left, #f0f0f0, #534848, #f0f0f0); 
 }
 
-hr.stylepost:after {
+hr.stylepost1:after {
 	content: '§';
 	display: inline-block;
 	position: relative;
@@ -212,6 +212,7 @@ hr.stylepost:after {
 	-moz-transform: rotate(30deg);
     transform: rotate(30deg);
 }    
+
 
 /* lllllllllllllllllllllllllllllllllllllllllllllllllllll */
 .topnav {

@@ -8,19 +8,20 @@
                   <div class="form-group mr-5">
                     <label for="title">Titre: <sup>*</sup></label>
                     <input type="text" name="title" class="form-control form-control-lg <?php echo (!empty($data['title_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['title']; ?>">
-                    <span class="invalid-feedback"><?php echo $data['title_err']; ?></span>
+                   
                   </div>
                   <div class="form-group mr-5">
                     <label for="date">Date: <sup>*</sup></label>
-                    <input type="date" name="date" class="form-control form-control-lg" value="<?php echo $data['date']; ?>">
+                    <input type="date" name="date" class="form-control form-control-lg<?php echo (!empty($data['date_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['date']; ?>">
+                   
+
                   </div>
                       <br><br>
             </div>     
             <div class="form-group">
                    <label for="body">Contenu: <sup>*</sup></label>
-                   <textarea id="format-custom" name="content" form-control form-control-lg <?php echo (!empty($data['content_err'])) ? 'is-invalid' : ''; ?>"><?php echo $data['content']; ?></textarea>
-                    <span class="invalid-feedback">
-                    <?php echo $data['content_err']; ?></span>
+                   <textarea id="format-custom" name="chapter" class="form-control form-control-lg <?php echo (!empty($data['chapter_err'])) ? 'is-invalid' : ''; ?>"><?php echo $data['chapter']; ?></textarea>
+                   
             </div>              
                   <div class="row">
                       <div class="col">
@@ -30,15 +31,3 @@
             </div> 
         </form>     
     </main>
-
-
-
-
-
-
-      
-        
-
-
-
-

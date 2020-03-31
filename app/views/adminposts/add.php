@@ -19,9 +19,9 @@
                      </div>     
                      <div class="form-group">
                     <label for="body">Contenu: <sup>*</sup></label>
-                    <textarea id="format-custom" name="content" form-control form-control-lg <?php echo (!empty($data['content_err'])) ? 'is-invalid' : ''; ?>"><?php echo $data['content']; ?></textarea>
+                    <textarea id="format-custom" name="chapter" form-control form-control-lg <?php echo (!empty($data['chapter'])) ? 'is-invalid' : ''; ?>"><?php echo $data['chapter']; ?></textarea>
                     <span class="invalid-feedback">
-                      <?php echo $data['content_err']; ?></span>
+                      <?php echo $data['chapter']; ?></span>
                   </div>              
                   <input type="submit" class="btn btn-info btn-block mt-3" value="Publier">
                 </div> </div>   

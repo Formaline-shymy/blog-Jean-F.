@@ -14,12 +14,12 @@
             </div>
            
             <p class= "postshorten">
-              <?php if (strlen($post->content) > 500): ?>
-              <?php echo substr($post->content, 0, strrpos(substr($post->content, 0, 525), ' ')); ?>  ...
+              <?php if (strlen($post->chapter) > 500): ?>
+              <?php echo substr($post->chapter, 0, strrpos(substr($post->chapter, 0, 525), ' ')); ?>  ...
                <a href="<?php echo URLROOT; ?>/posts/post/<?php echo $post->post_id; ?>">
                <span class="text-white"> Lire la suite</span></a>
               <?php else: ?>
-              <?php echo $post->content; ?>
+              <?php echo $post->chapter; ?>
               <?php endif;?>
               
            
@@ -32,7 +32,4 @@
   
    
   <?php require APPROOT . '/views/inc/footer.php'; ?>       
-
-       
-
       

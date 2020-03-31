@@ -46,7 +46,7 @@
         $this->db->bind(':post_id', $data['post_id']);
         $this->db->bind(':author', $data['author']);
         $this->db->bind(':content', $data['content']);
-       
+     
 
        // Execute
        if ($this->db->execute()) {
@@ -84,5 +84,3 @@
 
   
 }
-
-  

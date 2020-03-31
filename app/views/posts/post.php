@@ -8,32 +8,38 @@
                 <p class="titlePost  text-center  "> 
                       <?php echo $data['post']->title; ?>
                 </p>
-                <hr class="stylepost mt-5">
+                <hr class="stylepost1 mt-5">
                  <br>
                 <p class="contentPost text-justify ">
 
-                       <?php echo $data['post']->content; ?>
+                       <?php echo $data['post']->chapter; ?>
                 </p>         
              
-                <hr>
-                <p class="titleComments">Laissez un commentaire</p> 
+              <!--   <div>
+                <img src="../public/img/ny.png" alt="line">
+                </div> -->
+
+                <p class="titleComments text-center">Laissez un commentaire</p> 
                                
            
            <?php foreach ($data['commentsByPostId'] as $commentByPostId): ?>
               <div class="comment">
                 <div class ="row">
-                  <div class="col-8 d-flex align-items-left">
+                  <div class="col-7 d-flex text-left ml-3">
                     <p class="text-uppercase">
-                      <?php echo $commentByPostId->author; ?> </p>&nbsp;&nbsp;écrit: 
+                     <strong> <?php echo $commentByPostId->author; ?></strong> </p>&nbsp;&nbsp;écrit: 
                       <?php echo $commentByPostId->content;?> 
                     </div>
-                    <div class="col-4 text-right">
-                    <i class="fas fa-exclamation"></i>
+                    <span class="signaler col-4 text-right"> 
+                    <a href="#" class="text-decoration-none text-dark "><code>Signaler le commentaire</code></a>
+                        </span>
+                      
                   </div>
                 </div>
-              </div>
+              
+              <hr>
            <?php endforeach;?>
-                 
+             </div>    
                 <div class='form mb-5'>
          
                 <form action="<?php echo URLROOT; ?>/posts/post/<?php echo $data['post']->post_id; ?>" method="post">
@@ -49,3 +55,5 @@
               <input type="submit" class="btn btn-dark mt-4" value="Publier">
             </form>
            </div>
+
+          

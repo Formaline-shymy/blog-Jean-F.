@@ -29,11 +29,11 @@ class AdminPosts extends Controller {
               //  'description' =>'miauuuuuuuu',
                 'title' => $_POST['title'],
                 'date' => $_POST['date'],
-                'content' =>$_POST['content'],
+                'chapter' =>$_POST['chapter'],
       
                 'title_err' => '',
                 'date_err' => '',
-                'content_err'=> '',
+                'chapter_err'=> '',
               ];
               
               // Validate data
@@ -43,11 +43,11 @@ class AdminPosts extends Controller {
               if(empty($data['date'])){
                 $data['date_err'] = 'Veuillez choisir une date';
               }
-              if(empty($data['content'])){
-                $data['content_err'] = 'Veuillez écrir un chapitre';
+              if(empty($data['chapter'])){
+                $data['chapter_err'] = 'Veuillez écrir un chapitre';
               }
               // Make sure there is no errors
-              if(empty($data['title_err']) && empty($data['date_err']) && empty($data['content_err'])){
+              if(empty($data['title_err']) && empty($data['date_err']) && empty($data['chapter_err'])){
                 // Validated
                 if($this->postModel->addPost($data)){
                    redirect('admin/index');
@@ -63,7 +63,7 @@ class AdminPosts extends Controller {
                 $data = [
                   'title' => '',
                   'date' => '',
-                  'content'=>'',
+                  'chapter'=>'',
                 ];
           
                 $this->view('adminposts/add', $data);
@@ -81,65 +81,66 @@ class AdminPosts extends Controller {
           
              $this->view('adminposts/show', $data);
             }    
-      
+   
+            
+
       ////////        EDIT              ////     
       
-            public function edit($post_id){
-              if($_SERVER['REQUEST_METHOD'] == 'POST'){
-              // Sanitize POST array
-              $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-      
-              $data = [
-                'post_id' =>$post_id,
-                'title' => $_POST['title'],
-                'date' => $_POST['date'],
-                'content' =>$_POST['content'],
-               
-                'title_err' => '',
-                'date_err' => '',
-                'content_err'=> '',
-              ];
-              
-              // Validate data
-              if(empty($data['title'])){
-                $data['title_err'] = 'Veuillez remplir ce champ';
-              }
-              if(empty($data['date'])){
-                $data['date_err'] = 'Veuillez choisir une date';
-              }
-              if(empty($data['content'])){
-                $data['content_err'] = 'Veuillez écrir un chapitre';
-              }
-      
-              // Make sure there is no errors
-              if(empty($data['title_err']) && empty($data['date_err']) && empty($data['content_err'])){
-                // Validated
-                if($this->postModel->updatePost($data)){
-                 
-                  redirect('admin/index');
-                } else {
-                  die('Oups, alors!');
-                }
-              } else {
-                // Load view with errors
-                $this->view('adminposts/edit', $data);
-              }
-          
-            } else {
+      public function edit($post_id){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        // Sanitize POST array
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+        $data = [
+          'post_id' =>$post_id,
+          'title' => $_POST['title'],
+          'date' => $_POST['date'],
+          'chapter' =>$_POST['chapter'],
+         
+          'title_err' => '',
+          'date_err' => '',
+          'chapter_err'=> '',
+        ];
         
-           // Get existing chapter from model
-           $post = $this->postModel->getPostById($post_id);
-        
-           $data = [
-            'post_id' => $post_id,
-            'title' => $post->title,
-            'date' => $post->date,
-            'content' => $post->content,
-             ];
-           $this->view('adminposts/edit', $data);
-          }
+        // Validate data
+        if(empty($data['title'])){
+          $data['title_err'] = 'Veuillez remplir ce champ';
         }
-      
+        if(empty($data['date'])){
+          $data['date_err'] = 'Veuillez choisir une date';
+        }
+        if(empty($data['chapter'])){
+          $data['chapter_err'] = 'Veuillez écrir un chapitre';
+        }
+
+        // Make sure there is no errors
+        if(empty($data['title_err']) && empty($data['date_err']) && empty($data['chapter_err'])){
+          // Validated
+          if($this->postModel->updatePost($data)){
+           
+            redirect('admin/index');
+          } else {
+            die('Oups, alors!');
+          }
+        } else {
+          // Load view with errors
+          $this->view('adminposts/edit', $data);
+        }
+    
+      } else {
+  
+     // Get existing chapter from model
+     $post = $this->postModel->getPostById($post_id);
+  
+     $data = [
+      'post_id' => $post_id,
+      'title' => $post->title,
+      'date' => $post->date,
+      'chapter' => $post->chapter,
+       ];
+     $this->view('adminposts/edit', $data);
+    }
+  }
       
       ////////        DELETE              ////     
       

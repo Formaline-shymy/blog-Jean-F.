@@ -23,12 +23,12 @@
                     </div>
                   </div>
               <p class="postshorten card-text ">
-                      <?php if (strlen($post->content) > 500): ?>
-                      <?php echo substr($post->content, 0, strrpos(substr($post->content, 0, 525), ' ')); ?>  ...
+                      <?php if (strlen($post->chapter) > 500): ?>
+                      <?php echo substr($post->chapter, 0, strrpos(substr($post->chapter, 0, 525), ' ')); ?>  ...
                       <a href="<?php echo URLROOT; ?>/adminposts/show/<?php echo $post->post_id; ?>">
                       <span class="text-white"> Voir plus </span></a>
                       <?php else: ?>
-                      <?php echo $post->content; ?>
+                      <?php echo $post->chapter; ?>
                       <?php endif;?>
               </p>    
                     <hr>

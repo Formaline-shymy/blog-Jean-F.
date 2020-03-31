@@ -39,11 +39,11 @@
      }
 
      public function addPost($data) {
-      $this->db->query('INSERT INTO posts (title, date, content) VALUES(:title, :date, :content)');
+      $this->db->query('INSERT INTO posts (title, date, chapter) VALUES(:title, :date, :chapter)');
       // Bind values
       $this->db->bind(':title', $data['title']);
       $this->db->bind(':date', $data['date']);
-      $this->db->bind(':content', $data['content']);
+      $this->db->bind(':chapter', $data['chapter']);
     
      // Execute
       if ($this->db->execute()) {
@@ -54,12 +54,12 @@
     }
 
     public function updatePost($data) {
-      $this->db->query('UPDATE posts SET title = :title, date = :date, content = :content WHERE post_id = :post_id');
+      $this->db->query('UPDATE posts SET title = :title, date = :date, chapter = :chapter WHERE post_id = :post_id');
       // Bind values
       $this->db->bind(':post_id', $data['post_id']);
       $this->db->bind(':title', $data['title']);
       $this->db->bind(':date', $data['date']);
-      $this->db->bind(':content', $data['content']);
+      $this->db->bind(':chapter', $data['chapter']);
     
        // Execute
       if ($this->db->execute()) {
