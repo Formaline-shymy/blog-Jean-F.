@@ -8,7 +8,7 @@
                 </a>  
               </p>  
             </div>  
-           
+       
            <div class= "postdate"> 
              <p> Publié le <?php echo date('d M Y', strtotime($post->date)); ?></p>
             </div>
@@ -31,5 +31,4 @@
     </div>
   
    
-  <?php require APPROOT . '/views/inc/footer.php'; ?>       
-      
+  <?php require APPROOT . '/views/inc/footer.php'; ?> 

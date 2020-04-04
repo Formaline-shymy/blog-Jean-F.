@@ -14,13 +14,15 @@
   
       public function index(){
         $postsCount = $this->postModel->countPosts();
-        $commentsCount = $this->commentModel->countComments();
+        $countComments = $this->commentModel->countComments();
+         $flagsCount = $this->commentModel->countFlags();
        
 
         $data = [
           'postsCount'=>$postsCount,
-          'commentsCount'=>$commentsCount,
-          // 'title'     =>'a kuku'   
+          'countComments'=>$countComments,
+          'flagsCount'=>$flagsCount,
+         
         ];
   
         $this->view('admin/index', $data);

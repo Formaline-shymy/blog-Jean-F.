@@ -33,11 +33,11 @@
         <div class="row justify-content-around">
           <div class="col-md-6">
             <div class="wrapper">
-              <div class="wrapper-info box1">
+              <div class="wrapper-info box">
                 <div class="d-flex">
                   <div>
                     <h2 class="sub-title color-light-gray text-center text-uppercase">Nouveau thriller en ligne <br> Episode par épisode!</h2> <br>
-                    <h3 class="heading-title">Un billet simple pour l'Alaska</h3>
+                    <h3 class="heading-title"><?php echo $data['booktitle']; ?></h3>
                   </div>
                 </div>
                 <h3 class="summary">Sommaire: </h3>

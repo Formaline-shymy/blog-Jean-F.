@@ -6,11 +6,12 @@
     public function __construct(){
       $this->db = new Database;
     }
-
+// transmition in admin panel
     public function getComments(){
       $this->db->query("SELECT * FROM comments
                         INNER JOIN posts
-                        ON comments.post_id = posts.post_id");
+                        ON comments.post_id = posts.post_id
+                        ORDER BY comments.flag DESC, comments.date_comm DESC");
   
       $results = $this->db->resultSet();
 
@@ -46,6 +47,7 @@
         $this->db->bind(':post_id', $data['post_id']);
         $this->db->bind(':author', $data['author']);
         $this->db->bind(':content', $data['content']);
+        // $this->db->bind(':date_comm', $data['date_comm']);
      
 
        // Execute
@@ -56,23 +58,56 @@
     }
     }
 
-    
-    
+  
     public function countComments() {
-      $this->db->query('SELECT * FROM comments');
+      $this->db->query('SELECT *  FROM comments');
+           
+      $this->db->resultSet();
+         
+      $results = $this->db->rowCount();
+         
+      return $results;
+     }
+
+
+    public function countCommentsbyPost($post_id)  {
+        $this->db->query("SELECT * FROM comments WHERE post_id = :post_id");
+       
+        $this->db->bind(':post_id', $post_id);
+  
+        $this->db->resultSet();
+
+        $results = $this->db->rowCount();
+
+        return $results;
+      }
     
+   
+
+//transmition in admin panel
+    public function getFlaggedComment($comm_id) {
+      $this->db->query('SELECT * FROM comments WHERE flag = 1 ORDER BY date_comm');
+      $this->db->bind(':comm_id', $comm_id);
+
+      $row = $this->db->single();
+
+      return $row;
+    }
+
+    public function countFlags(){
+      $this->db->query('SELECT *  FROM comments WHERE flag= 1');
       $this->db->resultSet();
     
       $results = $this->db->rowCount();
     
       return $results;
-     }
+    }
 
-     public function deleteComment($post_id) {
-      $this->db->query('DELETE FROM comments WHERE post_id = :post_id');
+    public function deleteComment($comm_id) {
+      $this->db->query('DELETE FROM comments WHERE comm_id = :comm_id');
     
      // Bind Values
-      $this->db->bind(':post_id', $post_id);
+      $this->db->bind(':comm_id', $comm_id);
     
      //Execute
       if ($this->db->execute()) {
@@ -82,5 +117,36 @@
       }
     }
 
+
+//report a comment
+    public function flagComment($comm_id) {
+      $this->db->query("UPDATE comments SET  flag = 1 WHERE comm_id = :comm_id");
+      $this->db->bind(':comm_id', $comm_id);
+      if ($row = $this->db->single()){;
+        return $row;
+        }
+        else {
+          // ID does not exist
+          die ("Désole mais aucun commentaire concernant le livre 'Billet simple pour l'Alaska' ne correspond à l'identifiant $comm_id") ;    
+        }
+    }
+
+
+//accept a comment - erase the flag//////////////////
+    public function eraseFlag($comm_id) {
+      $this->db->query('UPDATE comments SET flag = 0 WHERE comm_id = :comm_id');
+      $this->db->bind(':comm_id', $comm_id);
+
+    
+      // Execute
+      if ($this->db->execute()) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+  }
   
-}
+  
+

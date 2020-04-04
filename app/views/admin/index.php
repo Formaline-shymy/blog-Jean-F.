@@ -11,17 +11,18 @@
               date_default_timezone_set('Europe/Paris');
               echo date("H");?>h<?php echo date ("i");?>
               </h3>
-          <div class="jumbotron">
-            <h4 class=" mx-5"><a href="<?php echo URLROOT; ?>/adminposts/index">
-              <i class="fas fa-book ml-5"></i>
-              <strong> <?php echo $data['postsCount']; ?></strong> chapitres du livre 'Un Billet Simple Pour
-                L'Alaska' ont été publiés <br></a>
-               <p class="et text-center"> et </p>
-             <a href="<?php echo URLROOT; ?>/admincomments/index">
-             <i class="fas fa-comments ml-5"></i>
-              <strong><?php echo $data['commentsCount']; ?></strong> commentaires ont été ajoutés.
+          <div class="jumbotron text-center">
+            <h4 class=" mx-5">
+              <a href="<?php echo URLROOT; ?>/adminposts/index">
+              <i class="fas fa-book ml-5"></i><strong> <?php echo $data['postsCount']; ?></strong> chapitres du livre 'Un Billet Simple Pour
+                L'Alaska' ont été publiés</a> <br>
+              <br> <div class="et text-primary"> et </div> <br>
+          <a href="<?php echo URLROOT; ?>/admincomments/index">
+             <i class="fas fa-comments ml-5"></i><strong><?php echo $data['countComments']; ?></strong> commentaires ont été ajoutés</a> <br>
+            <br> <div class="dont text-primary"> dont</div> <br>
+              <a href="<?php echo URLROOT; ?>/admincomments/index"><i class="fab fa-font-awesome-flag"></i><strong><?php echo $data['flagsCount']; ?></strong> commentaire(s) ont été signalés.</a>
             </h4>
-          </div>
+          </div> 
   
         
 

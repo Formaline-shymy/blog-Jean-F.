@@ -1,6 +1,6 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 <div class="container">
-  <div class="p-3 mt-2">
+  <div class="p-5 mt-2">
       <h1 class="text-left"><?php echo $data['title']; ?></h1>
          <br>
          <div class="text-center">

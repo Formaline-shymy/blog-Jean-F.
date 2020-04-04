@@ -102,6 +102,12 @@ a.disabled {
     color: whitesmoke;
 }
 
+.bookcover:hover{
+    transform: scale(1.15);
+    cursor: pointer;
+	transition: all 0.5s ease 0s;
+	}
+
 .newsletter{
     text-decoration: none;
     color: black;
@@ -125,6 +131,10 @@ a.disabled {
     color:black;
 }
 
+.postshorten{
+    text-align:justify;
+}
+
 .error_page{
     font-family: 'Special Elite';
 }
@@ -132,16 +142,22 @@ a.disabled {
 #content {
     margin-bottom : 30px;
 }
-
-
-.titleComments {
-    font-size : 20px;
+.contentPost{
+    font-family: 'Special Elite';
+    font-size: 16px;
+    line-height: 2em;
+}
+.titlePost{
+    font-family: 'Special Elite';
+    font-size: 22px;
     color:whitesmoke; 
 }
 
-#txtComment {
-    width: 50%;
+.titleComments {
+    font-size : 22px;
+    color:whitesmoke; 
 }
+
 
 .footer{
     font-size:1em;
@@ -188,16 +204,16 @@ a.disabled {
   }
 
 hr{
-    border-top: 2px solid #534848;
+    border-top: 2.5px solid grey
 }
 
-hr.stylepost1 { 
+hr.stylepost1 , hr.stylepost2 { 
     border: 0; text-align: center;
     height: 3px; 
-    background-image: -webkit-linear-gradient(left, #f0f0f0, #534848, #f0f0f0);
-    background-image: -moz-linear-gradient(left, #f0f0f0, #534848, #f0f0f0);
-    background-image: -ms-linear-gradient(left, #f0f0f0, #534848, #f0f0f0);
-    background-image: -o-linear-gradient(left, #f0f0f0, #534848, #f0f0f0); 
+    background-image: -webkit-linear-gradient(left,#464343, #f0f0f0, #464343);
+    background-image: -moz-linear-gradient(left,#464343, #f0f0f0, #464343);
+    background-image: -ms-linear-gradient(left,#464343, #f0f0f0, #464343);;
+    background-image: -o-linear-gradient(left,#464343, #f0f0f0, #464343);; 
 }
 
 hr.stylepost1:after {
@@ -206,7 +222,7 @@ hr.stylepost1:after {
 	position: relative;
 	top: -16px;
 	padding: 0 10px;
-	background-color:#534848;
+	background-color: #f0f0f0;
 	font-size: 26px;
 	-webkit-transform: rotate(50deg);
 	-moz-transform: rotate(30deg);
@@ -266,7 +282,7 @@ hr.stylepost1:after {
      
 .nav-link {
     text-decoration: none;
-    color: black;
+    color: rgb(105, 95, 95);
     text-align: left;
     padding-left: 10px;
     line-height: 59px;
@@ -274,7 +290,7 @@ hr.stylepost1:after {
     flex-direction: column;
     flex-wrap:wrap;
     position: relative;
-    font-size: 22px;
+    font-size: 20px;
     font-family:RobotoHobbees ;
     width: 280px;
 }

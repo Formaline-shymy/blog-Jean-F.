@@ -29,9 +29,8 @@
      $posts = $this->postModel->getPosts();
      $post = $this->postModel->getPostById($post_id);
      $comments = $this->commentModel->getComments();
-     
      $commentsByPostId = $this->commentModel->getCommentsbyPostId($post_id);
-    
+     $countCommentsByPostId = $this->commentModel->countCommentsbyPost($post_id);
   
           
      $data = [
@@ -40,6 +39,7 @@
       'post_id' => $post_id,
       'comments' => $comments,
       'commentsByPostId' => $commentsByPostId,
+      'countCommentsByPostId' => $countCommentsByPostId,
     
      ];
 
@@ -53,6 +53,7 @@
           'author' => $_POST['author'],
           'content' => $_POST['content'],
           'post_id' => $_POST['post_id'],
+        
          
         ];
 
@@ -61,6 +62,7 @@
           if($this->commentModel->addComment($data)){
             
           $this->view('posts/post', $data);
+         
         }
     
         } else {
@@ -68,10 +70,36 @@
             'author' => '',
             'post_id' => '',
             'content'=>'',
+  
              ];
     
           $this->view('posts/index', $data);
        }       
       }
     }
+  
+  public function flag($comm_id) {
+     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $data = [
+       'flag' => $_POST['flag'],
+      ];
+   
+      $this->commentModel->flagComment($comm_id);
+   
+     
+     } else {
+      if (is_null($comm_id)) {
+       redirect('posts/index');
+      }
+   
+      $data = [
+       'flag' => '',
+      ];
+   
+      $this->view('posts/index', $data);
+     }
+    }
+  
   }
+    
+    
