@@ -20,7 +20,7 @@ class AdminComments extends Controller {
       }
 
       public function show($comm_id){
-          $comment = $this->commentModel->getCommentById($comm_id);
+          $comment = $this->commentModel->getComment($comm_id);
        
           $data = [
          'comment' => $comment,
@@ -34,7 +34,7 @@ class AdminComments extends Controller {
         //post request
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
           $this->commentModel->getCommentById($comm_id);
-          $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        
          
           $data = [
          '$comm_id' => $comm_id,
@@ -44,7 +44,7 @@ class AdminComments extends Controller {
         
         if($this->commentModel->deleteComment($comm_id)){
                
-          redirect('admin/index');
+          redirect('admincomments/index');
         } else {
           die('Oups, alors!');
         }
@@ -52,16 +52,17 @@ class AdminComments extends Controller {
 
       public function erase($comm_id){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-          $this->commentModel->getCommentById($comm_id);
-          $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+          $this->commentModel->getComment($comm_id);
+        
   
           $data = [
-          'flag' => $_POST['flag'],
+          'flag' => '0',
           ];
+
           $this->view('admincomments/erase', $data);}
 
          if( $this->commentModel->eraseFlag($comm_id)){
-            redirect('admin/index');
+            redirect('admincomments/index');
             } else {
               die('Oups, alors!');
             }
