@@ -1,0 +1,414 @@
+@font-face {
+    font-family: 'RobotoHobbees';
+    font-style: normal;
+    font-weight: 400;
+    src: local('RobotoHobbees'), local('RobotoHobbees-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+
+@font-face {
+    font-family: 'Kaushan Script';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Kaushan Script'), local('KaushanScript-Regular'), url(https://fonts.gstatic.com/s/kaushanscript/v8/vm8vdRfvXFLG3OLnsO15WYS5DG74wNI.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Special Elite';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/special-elite-v10-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Special Elite Regular'), local('SpecialElite-Regular'),
+             url('../fonts/special-elite-v10-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/special-elite-v10-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/special-elite-v10-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/special-elite-v10-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/special-elite-v10-latin-regular.svg#SpecialElite') format('svg'); /* Legacy iOS */
+  }
+  
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background:rgb(116, 145, 189); 
+    font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif; 
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:rgb(237, 241, 243);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 40px;
+  }
+  
+.sidenav a {
+    padding: 8px 8px 15px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'RobotoHobbees';
+    color:rgb(105, 95, 95);
+    display: block;
+    transition: 0.3s;
+}  
+  
+.sidenav a:hover {
+    color: rgb(116, 145, 189);
+}  
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+  color: black;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}  
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+  
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.navbar-brand {
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    font-size: 30px;
+    color: whitesmoke;
+    font-family: 'Special Elite';
+}
+
+.navbar-brand:focus, .navbar-brand:hover {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.bookcover:hover{
+    transform: scale(1.15);
+    cursor: pointer;
+	transition: all 0.5s ease 0s;
+	}
+
+.newsletter{
+    text-decoration: none;
+    color: black;
+}
+
+.heading-title {
+    font-family: 'Special Elite';
+    font-size: 35px;
+    margin: 15px 0;
+    text-align: center;
+}
+  
+.postlink a,
+.postshort a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.postlink a:hover , .postlink a:focus,
+.postshort a:hover , .postshort a:focus {
+    color:black;
+}
+
+.postshorten{
+    text-align:justify;
+}
+
+.error_page{
+    font-family: 'Special Elite';
+}
+
+#content {
+    margin-bottom : 30px;
+}
+.contentPost{
+    font-family: 'Special Elite';
+    font-size: 16px;
+    line-height: 2em;
+}
+.titlePost{
+    font-family: 'Special Elite';
+    font-size: 22px;
+    color:whitesmoke; 
+}
+
+.titleComments {
+    font-size : 22px;
+    color:whitesmoke; 
+}
+
+
+.footer{
+    font-size:1em;
+    font-family: 'RobotoHobbees';
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+    height: 100px;
+    padding-top: 10px;
+    color:#999;
+    text-align: center;
+    background-color:#f9f9f9;
+    border-top: .05rem solid #e5e5e5;
+}	
+
+.oc {
+    text-align: center;
+    color:black;
+}
+
+.footer a , .linkback a {
+    color: black;
+    text-decoration: none;    
+}
+
+.linkback a:hover{
+    color:whitesmoke;
+}
+
+.float-right a {
+    margin-right: 20px;
+    color: grey;
+    text-decoration: none;    
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+    min-width: 100%;
+  }
+
+  #content-wrap {
+   padding-bottom: 80px;    /* Footer height */
+  }
+
+hr{
+    border-top: 2.5px solid grey
+}
+
+hr.stylepost1 , hr.stylepost2 { 
+    border: 0; text-align: center;
+    height: 3px; 
+    background-image: -webkit-linear-gradient(left,#464343, #f0f0f0, #464343);
+    background-image: -moz-linear-gradient(left,#464343, #f0f0f0, #464343);
+    background-image: -ms-linear-gradient(left,#464343, #f0f0f0, #464343);;
+    background-image: -o-linear-gradient(left,#464343, #f0f0f0, #464343);; 
+}
+
+hr.stylepost1:after {
+	content: '§';
+	display: inline-block;
+	position: relative;
+	top: -16px;
+	padding: 0 10px;
+	background-color: #f0f0f0;
+	font-size: 26px;
+	-webkit-transform: rotate(50deg);
+	-moz-transform: rotate(30deg);
+    transform: rotate(30deg);
+}    
+
+
+/* lllllllllllllllllllllllllllllllllllllllllllllllllllll */
+.topnav {
+    overflow: hidden;
+    background-color: rgb(157, 173, 199); 
+  }
+  
+.topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 0px;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right:20px ;
+    font-family:RobotoHobbees ;
+}
+   
+.topnav a:not(.no-hover):hover {
+    background-color: rgb(186, 200, 223); 
+    color: whitesmoke; 
+}
+    
+.topnav-right {
+    float: right;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#navbar2 {
+    background-color:rgb(186, 200, 223); 
+    position: fixed;
+    float: left;
+    min-width: 290px;
+    height:100%;
+    padding: 0px;
+    margin-top :-20px;
+}
+
+#navbar2 thead {
+    list-style: none;
+    text-decoration:none;
+    padding-top: 40px;
+    overflow-y: auto;
+    overflow-x: hidden;  
+
+}
+     
+.nav-link {
+    text-decoration: none;
+    color: rgb(105, 95, 95);
+    text-align: left;
+    padding-left: 10px;
+    line-height: 59px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    position: relative;
+    font-size: 20px;
+    font-family:RobotoHobbees ;
+    width: 280px;
+}
+
+.nav-link:hover{
+    color:gainsboro
+}
+   
+#navbar2 tr {
+    position:relative;
+}
+
+#navbar2 tr:hover{
+    background-color:rgb(116, 145, 189);
+}
+
+nav tr{
+    background-color:rgb(186, 200, 223); 
+    margin-top: 0;
+}
+  
+#main-doc header {
+    font-size:30px;
+    text-align: center;
+    font-family:RobotoHobbees ;
+    font-weight:bold;     
+}
+
+#main-doc {
+    color: black;
+    font-size: 15px;
+    padding: 20px;
+    text-align:justify;
+    margin-left: 300px;
+    margin-top: 80px;
+}
+
+.containerbio {
+    width:100%;
+    
+}
+
+input[type="radio"] {
+	display:none;
+}
+.bib {
+	width:30%;
+	float:left;
+	text-align:center;
+	background: #366186;
+	box-shadow: 2px 2px 1px rgba(0,0,0,0.15);
+	color:#fff;
+	text-shadow: 1px 1px 2px #083d6b;
+	padding:0.5%;
+	margin:0.5%;
+	margin-bottom:30px;
+	cursor:pointer;
+}
+
+input[type="radio"][id="thriller"]:checked + label {
+    background: black;
+}
+input[type="radio"][id="thriller"]:checked ~ .s-f {
+  width:0;
+  height:0;
+  padding:0;
+  margin:0;
+  opacity:0;
+}
+input[type="radio"][id="s-f"]:checked + label {
+    background: rgb(100, 100, 110);
+}
+input[type="radio"][id="s-f"]:checked ~ .thriller {
+  width:0;
+  height:0;
+  padding:0;
+  margin:0;
+  opacity:0;
+}
+
+.tile {
+  text-shadow: 1px 1px 0 #afafaf;
+  width:30%;
+  
+  float:left;
+  transition:all 1s;
+  margin:0.5%;
+  padding:15px 5px 5px 5px;
+}
+
+/* ////flag */
+.flagModal {
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  
+  .add-comment {
+    cursor: pointer;
+  }
+  
+  .add-comment .btn {
+    color: #e4573d;
+    font-style: italic;
+    padding: 10px 30px;
+    border: 1px solid #e13d3d;
+    background: #fff;
+  }
+  
+  .add-comment-form {
+    display: none;
+  }
+  
+  .modal-header {
+    border-bottom: none;
+  }
+  
+  .modal-footer {
+    border-top: none;
+  }
+    
+
