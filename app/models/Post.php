@@ -39,10 +39,11 @@
      }
 
      public function addPost($data) {
-      $this->db->query("INSERT INTO posts (title, chapter) VALUES(:title, :chapter) ORDER BY date DESC" );
+      $this->db->query("INSERT INTO posts (title, chapter, date) VALUES(:title, :chapter, :date) ORDER BY date DESC" );
       // Bind values
+  
       $this->db->bind(':title', $data['title']);
-      // $this->db->bind(':date', $data['date']);
+      $this->db->bind(':date', $data['date']);
       $this->db->bind(':chapter', $data['chapter']);
     
      // Execute
@@ -58,7 +59,7 @@
       // Bind values
       $this->db->bind(':post_id', $data['post_id']);
       $this->db->bind(':title', $data['title']);
-      // $this->db->bind(':date', $data['date']);
+      $this->db->bind(':date', $data['date']);
       $this->db->bind(':chapter', $data['chapter']);
     
        // Execute

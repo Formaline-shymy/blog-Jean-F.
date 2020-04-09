@@ -19,17 +19,6 @@
     }
 
 
-    public function getCommentById($comm_id)
-    {
-        $this->db->query('SELECT * FROM comments WHERE comm_id = :comm_id');
-        $this->db->bind(':comm_id', $comm_id);
-
-        $row = $this->db->single();
-
-        return $row;
-    }
-
-
     public function getCommentsByPostId($post_id){
       $this->db->query("SELECT * FROM comments WHERE post_id = :post_id");
       $this->db->bind(":post_id", $post_id);
@@ -42,20 +31,18 @@
 
     public function addComment($data){
 
-        $this->db->query('INSERT INTO comments (post_id, author, content) VALUES(:post_id , :author , :content)');
+        $this->db->query('INSERT INTO comments (post_id, author, content) VALUES(:post_id , :author , :content) ORDER BY date_comm DESC');
         // Bind values
         $this->db->bind(':post_id', $data['post_id']);
-        $this->db->bind(':author', $data['author']);
+        $this->db->bind(':author',  $data['author'] );
         $this->db->bind(':content', $data['content']);
-        // $this->db->bind(':date_comm', $data['date_comm']);
-     
-
+       
        // Execute
        if ($this->db->execute()) {
         return true;
-    } else {
+       } else {
         return false;
-    }
+        }
     }
 
   
@@ -67,26 +54,26 @@
       $results = $this->db->rowCount();
          
       return $results;
-     }
+    }
 
 
-    public function countCommentsbyPost($post_id)  {
-        $this->db->query("SELECT * FROM comments WHERE post_id = :post_id");
+    public function countCommentsbyPost($post_id) {
+      $this->db->query("SELECT * FROM comments WHERE post_id = :post_id");
        
-        $this->db->bind(':post_id', $post_id);
+      $this->db->bind(':post_id', $post_id);
   
-        $this->db->resultSet();
+      $this->db->resultSet();
 
-        $results = $this->db->rowCount();
+      $results = $this->db->rowCount();
 
-        return $results;
-      }
+      return $results;
+    }
     
    
 
 //transmition in admin panel
     public function getFlaggedComment($comm_id) {
-      $this->db->query('SELECT * FROM comments WHERE flag = 1 ORDER BY date_comm');
+      $this->db->query('SELECT * FROM comments WHERE flag = flag + 1 ORDER BY date_comm');
       $this->db->bind(':comm_id', $comm_id);
 
       $row = $this->db->single();
@@ -118,26 +105,24 @@
     }
 
 
-//report a comment
+//report a comment//
     public function flagComment($comm_id) {
-      $this->db->query("UPDATE comments SET  flag = 1 WHERE comm_id = :comm_id");
+      $this->db->query("UPDATE comments SET flag = flag + 1 WHERE comm_id = :comm_id");
       $this->db->bind(':comm_id', $comm_id);
-      if ($row = $this->db->single()){;
-        return $row;
-        }
-        else {
-          // ID does not exist
-          die ("Désole mais aucun commentaire concernant le livre 'Billet simple pour l'Alaska' ne correspond à l'identifiant $comm_id") ;    
-        }
+    
+      if ($this->db->execute()) {
+        return true;
+      } else {
+        return false;
+      }
     }
+     
 
-
-//accept a comment - erase the flag//////////////////
+//accept a comment - erase the flag/
     public function eraseFlag($comm_id) {
       $this->db->query('UPDATE comments SET flag = 0 WHERE comm_id = :comm_id');
       $this->db->bind(':comm_id', $comm_id);
 
-    
       // Execute
       if ($this->db->execute()) {
         return true;
@@ -146,6 +131,15 @@
       }
     }
 
+    public function getComment($comm_id)
+    {
+        $this->db->query('SELECT * FROM comments WHERE comm_id = :comm_id');
+        $this->db->bind(':comm_id', $comm_id);
+
+        $row = $this->db->single();
+
+        return $row;
+    }
   }
   
   

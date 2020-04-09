@@ -4,7 +4,7 @@
       <h1 class="text-left"><?php echo $data['title']; ?></h1>
          <br>
          <div class="text-center">
-          <img src="../public/img/man3.jpg" alt="photo" class="figure-img img-fluid rounded" style="width:630px; height:auto">     
+          <img src="img/man3.jpg" alt="photoman" class="figure-img img-fluid rounded" style="width:630px; height:auto">     
           <br><br>
          </div>
           <div class="text-justify">

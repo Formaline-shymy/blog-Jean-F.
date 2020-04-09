@@ -7,13 +7,14 @@
     </div>
  
     <div class="commentcontent container text-left py-2 px-5">
-        <p class="text-justify">
+        <p class="text-justify text-light font-weight-bold">
           <?php echo $data['comment']->content; ?>
         </p>
     </div>
     <div class="row mt-5 px-5">
       <div class="col">
-          <a href="<?php echo URLROOT; ?>/admincomments/erase<?php echo $data['comment']->comm_id; ?>" class="btn btn-outline-light"><i class="far fa-thumbs-up"></i> Accepter ce commentaire </a>
+        
+          <a href="<?php echo URLROOT; ?>/admincomments/erase/<?php echo $data['comment']->comm_id; ?>" class="btn btn-outline-light"><i class="far fa-thumbs-up"></i> Accepter ce commentaire et annuler le signalement </a>
       </div>
       <div class="col">
            <a href="<?php echo URLROOT; ?>/admincomments/delete/<?php echo $data['comment']->comm_id; ?>" class="btn btn-outline-light"><i class="far fa-trash-alt"></i> Supprimer ce commentaire </a>

@@ -1,4 +1,4 @@
-<?php require APPROOT . '/views/inc/adminheader.php'; ?>
+<?php require APPROOT . '/views/inc/adminheader.php'; ?> 
     <main id="main-doc">  
 
     <h2 class="text-uppercase text-center text-white mt-0 mb-3"><i class="fas fa-exchange-alt"></i>  Modifier</h2>
@@ -10,7 +10,7 @@
                     <input type="text" name="title" class="form-control form-control-lg <?php echo (!empty($data['title_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['title']; ?>">
                    
                   </div>
-                  <div class="form-group mr-5">
+                 <div class="form-group mr-5">
                     <label for="date">Date: <sup>*</sup></label>
                     <input type="date" name="date" class="form-control form-control-lg<?php echo (!empty($data['date_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['date']; ?>">
                    

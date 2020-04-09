@@ -12,8 +12,11 @@
                       </div>
                       <div class="form-group mr-5">
                         <label for="date">Date: <sup>*</sup></label>
-                        <input type="date" name="date" class="form-control form-control-lg <?php echo (!empty($data['date'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['date']; ?>">
-                        <span class="invalid-feedback"><?php echo $data['date']; ?></span>
+                        <input type="date" name="date" class="form-control form-control-lg
+             <?php echo (!empty($data['date_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['date']; ?>">
+             
+
+                        <span class="invalid-feedback"><?php echo $data['date_err']; ?></span>
                       </div>
                       <br><br>
                      </div>     
