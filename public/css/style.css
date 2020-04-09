@@ -381,6 +381,34 @@ input[type="radio"][id="s-f"]:checked ~ .thriller {
   padding:15px 5px 5px 5px;
 }
 
-
+/* ////flag */
+.flagModal {
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
   
+  .add-comment {
+    cursor: pointer;
+  }
+  
+  .add-comment .btn {
+    color: #e4573d;
+    font-style: italic;
+    padding: 10px 30px;
+    border: 1px solid #e13d3d;
+    background: #fff;
+  }
+  
+  .add-comment-form {
+    display: none;
+  }
+  
+  .modal-header {
+    border-bottom: none;
+  }
+  
+  .modal-footer {
+    border-top: none;
+  }
+    
 
