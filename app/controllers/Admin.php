@@ -6,7 +6,7 @@
     public function __construct(){
       if (!isset($_SESSION['id'])) {
         redirect('index');
-          // block access to admin profile for not register users
+          // block access to admin profile for non register users
       }
       $this->postModel = $this->model('Post');
       $this->commentModel = $this->model('Comment');

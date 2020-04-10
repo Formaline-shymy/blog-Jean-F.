@@ -8,7 +8,7 @@
     public function index(){
         $data = [
             'title' => 'Mentions légales', 
-          ];
+        ];
     
           $this->view('pages/mentions', $data);
         }

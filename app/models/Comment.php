@@ -31,12 +31,13 @@
 
     public function addComment($data){
 
-        $this->db->query('INSERT INTO comments (post_id, author, content) VALUES(:post_id , :author , :content) ORDER BY date_comm DESC');
+        $this->db->query('INSERT INTO comments (post_id, author, content, flag) VALUES(:post_id , :author , :content, :flag) ORDER BY date_comm DESC');
         // Bind values
+        
         $this->db->bind(':post_id', $data['post_id']);
         $this->db->bind(':author',  $data['author'] );
         $this->db->bind(':content', $data['content']);
-       
+        $this->db->bind(':flag', $data['flag']);
        // Execute
        if ($this->db->execute()) {
         return true;
@@ -107,8 +108,11 @@
 
 //report a comment//
     public function flagComment($comm_id) {
-      $this->db->query("UPDATE comments SET flag = flag + 1 WHERE comm_id = :comm_id");
+ 
+      $this->db->query("UPDATE comments SET flag = flag + 1  WHERE comm_id = :comm_id ");
+     
       $this->db->bind(':comm_id', $comm_id);
+            
     
       if ($this->db->execute()) {
         return true;

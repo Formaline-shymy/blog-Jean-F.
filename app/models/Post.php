@@ -19,13 +19,9 @@
       $this->db->query("SELECT * FROM posts WHERE post_id = :post_id");
       $this->db->bind(':post_id', $post_id);
 
-      if ($row = $this->db->single()){;
+      $row = $this->db->single();
+
       return $row;
-      }
-      else {
-        // ID does not exist
-        die ("Désole mais aucun chapitre de 'Billet simple pour l'Alaska' ne correspond à l'identifiant $post_id") ;    
-      }
     }
 
     public function countPosts() {

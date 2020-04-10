@@ -56,7 +56,7 @@ class AdminComments extends Controller {
         
   
           $data = [
-          'flag' => '0',
+            '$comm_id' => $comm_id,
           ];
 
           $this->view('admincomments/erase', $data);}
