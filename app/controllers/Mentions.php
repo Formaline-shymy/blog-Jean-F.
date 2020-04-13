@@ -11,5 +11,5 @@
         ];
     
           $this->view('pages/mentions', $data);
-        }
     }
+  }

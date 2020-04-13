@@ -4,14 +4,12 @@
     private $postModel;
     private $commentModel;
   
-
     public function __construct(){
     
       $this->postModel = $this->model('Post');
       $this->commentModel = $this->model('Comment');
     }  
 
-  
 
     public function index($post_id = null) {
         $posts = $this->postModel->getPosts();
@@ -19,12 +17,12 @@
         $comments = $this->commentModel->getCommentsbyPostId($post_id);
         $countCommentsByPostId = $this->commentModel->countCommentsbyPost($post_id); 
 
-      $data = [
-      'posts' => $posts,
-      'post' => $post,
-      'comments' => $comments,
-      'countCommentsByPostId' => $countCommentsByPostId, 
-      ];
+          $data = [
+          'posts' => $posts,
+          'post' => $post,
+          'comments' => $comments,
+          'countCommentsByPostId' => $countCommentsByPostId, 
+          ];
 
       if (is_null($post_id)) {
         $this->view('pages/posts', $data);
@@ -54,17 +52,16 @@
       }
     }
 
-public function flag($comm_id) {
+     public function flag($comm_id) {
     
           if($_SERVER['REQUEST_METHOD'] == 'POST'){
      
-      if( $this->commentModel->flagComment($comm_id)){
-        redirect('posts/');
-       
+          if( $this->commentModel->flagComment($comm_id)){
+            redirect('posts/');
+          
          }else {
           die('Oups, alors!');
         }
-      
-     } 
-  }
+        } 
+     }
   }

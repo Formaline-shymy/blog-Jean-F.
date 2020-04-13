@@ -1,9 +1,8 @@
 <?php require APPROOT . '/views/inc/adminheader.php'; ?>     
-<main id="main-doc">  
+  <main id="main-doc">  
     <p class="titlePost  text-center  "> 
-        <?php echo $data['post']->title; ?>
-     </p>
- 
+      <?php echo $data['post']->title; ?>
+    </p>
     <div class="container py-2">
         <p class="text-justify">
           <?php echo $data['post']->chapter; ?>
@@ -17,12 +16,10 @@
             <div class="col">
             <a href="<?php echo URLROOT; ?>/adminposts/delete/<?php echo $data['post']->post_id; ?>" class="btn btn-danger btn-block">Supprimer ce chapitre </a>
             </div> 
-            
           </div>
         </div>
     </div>
-</form>
-   </main>
+  </main>
 
 
    

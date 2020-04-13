@@ -1,5 +1,4 @@
 <?php
-
     class Users extends Controller {
         public function __construct(){
            $this->userModel = $this ->model('User');
@@ -181,7 +180,5 @@
                 unset($_SESSION['name']);
                 session_destroy();
                 redirect('users/login');
-            }
-         
-           
+            }  
  }

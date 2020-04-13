@@ -1,6 +1,7 @@
   //annonymous function
-  var flag= document.getElementById("clickflag");
+  var flag= document.getElementById("clickflagModal");
 
-  flag.onclick = function() {
+  flagModal.onclick = function() {
     flag.innerHTML = "Le commentaire à bien été signaler, merci";
   };
+  

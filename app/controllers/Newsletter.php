@@ -9,5 +9,5 @@
         $data = [ ];
     
           $this->view('pages/newsletter', $data);
-        }
     }
+  }

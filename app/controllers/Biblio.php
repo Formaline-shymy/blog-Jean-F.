@@ -8,6 +8,6 @@
     public function index(){
         $data = [];
     
-          $this->view('pages/biblio', $data);
-        }
+        $this->view('pages/biblio', $data);
     }
+  }

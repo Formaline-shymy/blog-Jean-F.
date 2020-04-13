@@ -31,13 +31,13 @@
 
     public function addComment($data){
 
-        $this->db->query('INSERT INTO comments (post_id, author, content, flag) VALUES(:post_id , :author , :content, :flag) ORDER BY date_comm DESC');
+        $this->db->query('INSERT INTO comments (post_id, author, content) VALUES(:post_id , :author , :content) ORDER BY date_comm ASC');
         // Bind values
         
         $this->db->bind(':post_id', $data['post_id']);
         $this->db->bind(':author',  $data['author'] );
         $this->db->bind(':content', $data['content']);
-        $this->db->bind(':flag', $data['flag']);
+     
        // Execute
        if ($this->db->execute()) {
         return true;
@@ -45,7 +45,6 @@
         return false;
         }
     }
-
   
     public function countComments() {
       $this->db->query('SELECT *  FROM comments');
@@ -56,7 +55,6 @@
          
       return $results;
     }
-
 
     public function countCommentsbyPost($post_id) {
       $this->db->query("SELECT * FROM comments WHERE post_id = :post_id");
@@ -70,8 +68,7 @@
       return $results;
     }
     
-   
-
+  
 //transmition in admin panel
     public function getFlaggedComment($comm_id) {
       $this->db->query('SELECT * FROM comments WHERE flag = flag + 1 ORDER BY date_comm');
@@ -104,7 +101,6 @@
         return false;
       }
     }
-
 
 //report a comment//
     public function flagComment($comm_id) {
@@ -144,7 +140,8 @@
 
         return $row;
     }
-  }
+
+}
   
   
 

@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-5 mx-auto">
       <div class="card card-body bg-light mt-5">
-      <h3>Connexion</h3> 
-      <p>Pour vous connecter, merci de remplir tous les champs obligatoires:</p>
+         <h3>Connexion</h3> 
+         <p>Pour vous connecter, merci de remplir tous les champs obligatoires:</p>
 
         <form action="<?php echo URLROOT; ?>/users/login" method="post">
           <div class="form-group">

@@ -230,36 +230,23 @@ hr.stylepost1:after {
 }    
 
 
-/* lllllllllllllllllllllllllllllllllllllllllllllllllllll */
+/* llllllllllllllll-----ADMIN PANEL-------lllllllllllllllllllllllllllllllllllll */
 .topnav {
     overflow: hidden;
+    height: 60px;
     background-color: rgb(157, 173, 199); 
   }
   
 .topnav a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 0px;
-    text-decoration: none;
-    font-size: 20px;
-    margin-right:20px ;
-    font-family:RobotoHobbees ;
-}
-   
-.topnav a:not(.no-hover):hover {
-    background-color: rgb(186, 200, 223); 
-    color: whitesmoke; 
-}
-    
-.topnav-right {
     float: right;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 30px;
+    margin-right:20px ;
+    
 }
 
-.navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 0;
-    padding-left: 0;
-}
 
 #navbar2 {
     background-color:rgb(186, 200, 223); 
@@ -328,9 +315,13 @@ nav tr{
     margin-top: 80px;
 }
 
+
+
+
+
+ /* --------------Bibiograpie --------------- */
 .containerbio {
     width:100%;
-    
 }
 
 input[type="radio"] {
@@ -372,17 +363,13 @@ input[type="radio"][id="s-f"]:checked ~ .thriller {
 }
 
 .tile {
-  text-shadow: 1px 1px 0 #afafaf;
-  width:30%;
-  
-  float:left;
-  transition:all 1s;
+  transition: 0.5s;
   margin:0.5%;
   padding:15px 5px 5px 5px;
 }
 
 /* ////flag */
-.flagModal {
+.clickflagModal {
     margin-bottom: 1rem;
     cursor: pointer;
   }
@@ -411,4 +398,69 @@ input[type="radio"][id="s-f"]:checked ~ .thriller {
     border-top: none;
   }
     
+/******************************************************* MEDIA QUERRIES ***----ADMIN PANEL ---*******************************************/
+@media only screen and (max-width: 700px) {
 
+  .topnav {
+    height: 40px;
+  }
+
+  .topnav a {
+    padding: 5px 10px;
+    font-size: 20px;
+    margin-right: 0px;
+   }
+   
+   #navbar2 {
+    margin-top: -40px;
+    min-width: 100px;
+   }
+
+   .nav-link {
+    padding-left: 5px;
+    line-height: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    font-size: 18px;
+    font-family: RobotoHobbees;
+    width: 100px;
+   }
+
+   #main-doc {
+    padding: 20px;
+    text-align: justify;
+    margin-left: 120px;
+    margin-top: 55px;
+   }
+
+   #main-doc header {
+    font-size: 20px;
+    font-weight: normal;
+   }
+
+   .tablename, .todaydate{
+    font-size: 19px;
+   }
+
+   .jumbotron{
+    font-size: 13px;
+   }
+   
+   .textjumbo{
+    font-size: 1rem;
+    margin-left: 0 !important;
+   }
+
+   thead .col2, thead .col3, thead .col4 {
+    display: none;   
+   }
+   tbody .col2, tbody .col3, tbody .col4 {
+        display: none;   
+   }
+   
+
+   
+
+}

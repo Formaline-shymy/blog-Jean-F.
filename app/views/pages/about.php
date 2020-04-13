@@ -18,7 +18,6 @@
             <br><br>
             L'ensemble de ses titres, salués par la critique, se sont classés à leur sortie dans la liste des meilleures ventes. Traduits dans 25 pays, ses thrillers n’en finissent plus de captiver les lecteurs et de questionner notre rapport intime au futur.
             <br><br><br>
-
             </p>
           </div>
   </div> 

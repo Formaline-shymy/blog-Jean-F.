@@ -2,8 +2,7 @@
   class Post {
     private $db;
     
-  
-    public function __construct(){
+      public function __construct(){
       $this->db = new Database;
     }
 
@@ -24,6 +23,7 @@
       return $row;
     }
 
+
     public function countPosts() {
       $this->db->query('SELECT * FROM posts');
            
@@ -33,6 +33,7 @@
            
         return $results;
      }
+
 
      public function addPost($data) {
       $this->db->query("INSERT INTO posts (title, chapter, date) VALUES(:title, :chapter, :date) ORDER BY date DESC" );
@@ -79,6 +80,5 @@
         return false;
       }
     }
-
     
   }

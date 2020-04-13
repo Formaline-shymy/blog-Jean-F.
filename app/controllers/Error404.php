@@ -9,5 +9,5 @@
         $data = [];
     
           $this->view('pages/error404', $data);
-        }
     }
+  }

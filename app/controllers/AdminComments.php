@@ -26,8 +26,7 @@ class AdminComments extends Controller {
          'comment' => $comment,
          ];
       
-         $this->view('admincomments/show', $data);
-           
+         $this->view('admincomments/show', $data);  
       }
 
       public function delete($comm_id){
@@ -53,7 +52,6 @@ class AdminComments extends Controller {
       public function erase($comm_id){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
           $this->commentModel->getComment($comm_id);
-        
   
           $data = [
             '$comm_id' => $comm_id,
@@ -65,8 +63,8 @@ class AdminComments extends Controller {
             redirect('admincomments/index');
             } else {
               die('Oups, alors!');
-            }
-        }
+         }
       }
+}
 
   

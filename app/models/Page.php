@@ -2,7 +2,6 @@
 class Page {
     private $db;
   
-  
     public function __construct(){
       $this->db = new Database;
     }
@@ -12,7 +11,7 @@ class Page {
 
       return $this->db->resultSet();
     }
-  }
+}
 
   
  

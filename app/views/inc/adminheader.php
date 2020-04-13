@@ -30,17 +30,12 @@
   </script>
  </head>
 <body>
-<nav class ="topnav fixed-top  navbar-expand-lg">
+<nav class ="topnav fixed-top navbar-expand-lg">
     
-    <div class ="topnav-right">
-    
-      <div class ="navbar-nav ">
-        <a class ="nav-item nav-link no-hover"> <div class = 'hi text-white text-uppercase font-weight-bold'>Bonjour  <?php echo $_SESSION['name']; ?> !</div></a></a>
-        <a class ="nav-item nav-link" href="<?php echo URLROOT; ?>/users/logout">Se déconnecter</a>
+          
+        <a href="<?php echo URLROOT; ?>/users/logout">LOG OUT <i class="fas fa-sign-out-alt"></i></a>
         <!-- <a class ="nav-item nav-link  href="#">Changer le mot de passe</a> -->
-      </div>
-    </div>
-   </nav>
+         </nav>
   
   
       <nav id="navbar2">
