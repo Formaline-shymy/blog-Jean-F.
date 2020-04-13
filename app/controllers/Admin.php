@@ -14,13 +14,13 @@
   
       public function index(){
         $postsCount = $this->postModel->countPosts();
-        $countComments = $this->commentModel->countComments();
+        $commentsCount = $this->commentModel->countComments();
         $flagsCount = $this->commentModel->countFlags();
        
 
         $data = [
           'postsCount'=>$postsCount,
-          'countComments'=>$countComments,
+          'commentsCount'=>$commentsCount,
           'flagsCount'=>$flagsCount, 
         ];
   

@@ -55,7 +55,7 @@
                 <td><a class="nav-link" href="<?php echo URLROOT; ?>/admincomments/index">Liste des commentaires</a></td>
               </tr>
               <tr>
-                <td><a class="nav-link" href="<?php echo URLROOT; ?>/users/register" > Inscrir un nouveau utilisateur</a>
+                <td><a class="nav-link" href="<?php echo URLROOT; ?>/users/register" >Inscrire un nouveau administrateur</a>
               </tr>
               <tr>
                 <td><a class="nav-link" href="<?php echo URLROOT; ?>">Retourner au site</a></td>

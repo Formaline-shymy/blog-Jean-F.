@@ -36,7 +36,7 @@
               <div class="wrapper-info box">
                 <div class="d-flex">
                   <div>
-                    <h2 class="sub-title color-light-gray text-center text-uppercase">Nouveau thriller en ligne <br> Episode par épisode!</h2> <br>
+                    <h2 class="sub-title color-light-gray text-center text-uppercase">Nouveau thriller en ligne <br> épisode par épisode!</h2> <br>
                     <h3 class="heading-title"><?php echo $data['booktitle']; ?></h3>
                   </div>
                 </div>

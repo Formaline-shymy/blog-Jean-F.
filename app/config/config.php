@@ -7,7 +7,7 @@
 
   // App Root-  dirname go to app
   define('APPROOT', dirname(dirname(__FILE__)));
-  // URL Root
+  // URL Root for links
   define('URLROOT', 'http://localhost/blogjf');
   // Site Name
   define('SITENAME', 'Blog de Jean Forteroche');

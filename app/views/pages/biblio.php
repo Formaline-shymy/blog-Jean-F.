@@ -1,7 +1,7 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 <div class="container ">
   <div class="pl-5">
-	<h1 class="text-left mb-5">Tout mes romans</h1>
+	<h1 class="text-left mb-5">Tous mes romans</h1>
 	<section id="books" >
 		<div class="containerbio">
 			<div class="row">

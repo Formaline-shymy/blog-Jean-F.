@@ -12,7 +12,7 @@
             <br><br>
             Ingénieur de formation, Jean Forteroche s'illustre d'abord dans les nouvelles technologies et devient très tôt spécialiste en informatique. Mais aux algorithmes et suites binaires, Jean préfère les thrillers, tout particulièrement ceux qui se passent en milieu hostile. 
             <br><br>
-            Dès son premier roman, <strong>END. </strong> (Flammarion, 2003), Jean Forteroche à réçu le Prix du meilleur roman apocaliptique 'Apokalupsis' en 2004. Un premier succès en appelant un autre, il publie en 2005 <strong>Dans le noir</strong> (Flammarion), pour lequel il reçoit le Prix des lecteurs Quai du thriller en 2006, et le Prix SNCF du Thriller français en 2007.
+            Dès son premier roman, <strong>END. </strong> (Flammarion, 2003), Jean Forteroche a reçu le Prix du meilleur roman apocaliptique 'Apokalupsis' en 2004. Un premier succès en appelant un autre, il publie en 2005 <strong>Dans le noir</strong> (Flammarion), pour lequel il reçoit le Prix des lecteurs Quai du thriller en 2006, et le Prix SNCF du Thriller français en 2007.
             <br><br>          
             Cet enchaînement glorieux lui permet d'envisager l'avenir sous l'angle de la création et il quitte son job d'ingénieur informatique pour se consacrer entièrement à l'écriture.
             <br><br>

@@ -8,9 +8,9 @@
           <thead >
             <tr>
               <th class="col1">Commentaire</th>
-              <th class="col2 text-center">Date de commentaire</th>
-              <th class="col3 text-center">Auteur de commentaire</th>
-              <th class="col4">Chapitre</th>
+              <th class="col2 text-center">Date du commentaire</th>
+              <th class="col3 text-center">Auteur du commentaire</th>
+              <th class="col4 text-center">Chapitre</th>
               <th class="col5">Nombre de signalement</th>
               <th class="col6 text-center"> Modérer ce commentaire</th>
             </tr>
@@ -18,9 +18,9 @@
           <tbody>
             <tr> <?php foreach ($data['comments'] as $comment): ?>
               <td class="col1"><?php echo ($comment->content); ?></td>
-              <td class="col2"><?php echo ($comment->date_comm); ?></td>
+              <td class="col2 text-center "><?php echo ($comment->date_comm); ?></td>
               <td class="col3 text-center"><?php echo ($comment->author); ?></td>
-              <td class="col4"><?php echo($comment->title); ?></td>            
+              <td class="col4 text-center"><?php echo($comment->title); ?></td>            
               <td class="col5">
                 <div class="text-center"><?php echo ($comment->flag); ?></div>
               </td>
