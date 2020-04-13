@@ -80,7 +80,7 @@
     }
 
     public function countFlags(){
-      $this->db->query('SELECT *  FROM comments WHERE flag= 1');
+      $this->db->query('SELECT *  FROM comments WHERE flag > 0');
       $this->db->resultSet();
     
       $results = $this->db->rowCount();
